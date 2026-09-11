@@ -1,160 +1,124 @@
-# AI-Friendly Lightweight Travel Template
+# Travel Plan Page
 
-This is a local-first travel-page template that reuses the Golden UI, behavior, bookkeeping, and map design language. Its default path is deliberately lightweight:
+把自己的旅行计划快速整理成一个适合手机查看和分享的旅行网页。
 
-`User materials -> two confirmations -> trip-data.json -> build-map -> validate-lite -> local preview`
+这是一个 AI-Friendly 的轻量旅行网页模板。\
+你可以把航班、住宿、每日行程、门票、租车等旅行资料交给 Agent，由它按照现有模板生成第一版页面。
 
-首次生成优先缩短“用户提交计划 → 第一版网页可打开”的时间。默认只检查数据可读取、页面正常加载、已开启模块正常显示、地图正常生成和无明显运行错误。完整交互、逐项事实与边界场景验收按需执行。
+> 默认优先快速生成，先得到一个完整可用的网页底板，再根据自己的需求继续修改。
 
-地图默认使用十张固定的 Golden 风格背景。Builder 先根据地点的相对方位、距离、密度和路线连接形成候选模板池，再以旅行签名的稳定哈希自动选择其中一张并叠加固定路线；普通 Agent 不绘制国家轮廓、不生成地图背景，也不改变路线、节点、字体或图例样式。Overview 与 Daily 共用同一坐标和比例。
+---
 
-地图只显示目的地内部路线：出发国和纯转机机场默认忽略，目的地境内抵达机场保留；多国旅行按目的地拆成独立地图，不绘制跨国连线。To Do 只提取资料中明确写出的事项，没有明确事项时保留空列表供用户自行添加。门票 PDF 使用 `ticketPlanning.items[].document` 指向本地 trip asset，并在现有门票弹窗中直接预览。
+## 功能
 
-The bundled `trip-data.json` is a clean, uninitialized starter. It contains no sample destination, dates, flights, hotels, tickets, itinerary, or generated route map. Ordinary generation writes the user's trip directly into this file.
+目前页面主要包含：
 
-Heavy source-facts, canonical/renderer packages, Entity/Stable ID systems, migration frameworks, full validators, and architecture audits are retained only as advanced/reference material. Ordinary generation does not read or run them.
+- ✈️ 航班信息
+- 🗺️ 旅行路线地图
+- 📅 每日行程 Timeline
+- 🎫 门票 / PDF
+- 🚗 租车与自驾信息
+- ✅ To Do
+- 💰 多人旅行记账、分摊、统计和最终账单结算
 
-## Standard features
+不需要的模块可以关闭。
 
-- 航班卡片与倒计时；
-- 旅行总览与 Golden 风格路线地图；
-- 逐日 Timeline、每日地图和地点导航；
-- Ticket 状态、站内票据入口和外部购买入口；
-- Todo；
-- 自驾、租车与还车提醒；
-- 多人记账、分摊、统计与最少转账建议；
-- 默认浏览器本地保存；
-- 可选的用户自有 Cloudflare D1 多设备共享。
+---
 
-六个用户模块都由 `trip-data.json > config.modules` 控制：航班、地图、每日行程、租车、To Do、记账。关闭某个模块后，它不会显示、不会出现在导航中，也不会初始化或请求后端；不需要删除 HTML 或改 JavaScript。门票属于每日行程内容，不是独立模块。
+## 如何使用
 
-## For users: give the plan to an Agent
+把项目提供给支持 Skill / Agent 工作流的 AI，同时上传自己的旅行资料。
 
-Give the Agent a reasonably complete trip plan. The Agent extracts dates, flights, hotels, itinerary items, tickets, rental information, and places, then performs the two short confirmations below.
+可以直接告诉它：
 
-After confirmation, ordinary generation edits only `trip-data.json` and trip-specific assets. Travel content keeps its existing shape; module and persistence settings live under `config`, while map input lives under `map`. It then runs:
+> 我的旅行资料在这里，请基于这个 Skill 帮我生成一个旅行页面。
 
-```bash
-npm run build:map
-npm run validate
+Agent 会先阅读和整理你的旅行计划，确认需要的模块以及明显缺失的信息，然后生成第一版网页。
+
+建议尽量提供已经确定且相对完整的旅行资料，包括日期、地点、航班、住宿、每日行程、交通、门票等。
+
+由于 Agent 需要先阅读、理解并整理旅行计划，行程天数越多、涉及的城市或国家越多、资料越复杂，生成时间也可能相应增加。
+
+第一版的目标是：
+
+> 快速把已经确定的旅行信息整理成一个结构统一、视觉完整、可以继续修改的网页底板。
+
+---
+
+## 关于地图
+
+地图是这个项目里比较特殊的一部分。
+
+如果让 AI 针对每一次旅行、每一个国家或地区重新设计一张完整地图，通常会明显增加生成时间，也会消耗更多 Token，同时不同生成结果之间的视觉一致性也比较难保证。
+
+所以在默认的轻量生成流程中，不会让 AI 每次重新设计地图。
+
+项目里已经准备了一组风格统一、相对精美的地图模板。
+
+生成网页时，会根据旅行地点和路线选择合适的模板，再加入用户自己的地点、路线和行程信息。
+
+基础版本更关注：
+
+> 路线清晰、整体好看、不同页面之间保持统一。
+
+如果你对地图有更高要求，也可以在第一版页面完成后，再单独让 AI 对地图继续修改和完善。
+
+---
+
+## 本地预览
+
+生成完成后，可以在项目目录运行：
+```
 npm run preview
 ```
 
-The result is a local runnable/local preview version. The preview command prints its actual URL, starting at port 4173 and automatically trying later ports when needed. The Agent verifies that exact URL, keeps its preview process running, and includes the address as a clickable link in the final response even when the in-app browser is already open. Page generation does not mean the site has been deployed to the public internet.
-
-## The two confirmation rounds
-
-### Round 1: modules
-
-Agent 一次性确认：
-
-- 航班 `flights`
-- 地图 `overview`
-- 每日行程 `itinerary`
-- 租车 `driving`
-- To Do `todo`
-- 记账 `ledger`
-
-选择会写入 `trip-data.json > config.modules`，不会通过删代码实现。
-
-门票卡片位于每日行程中，并随 `itinerary` 一起显示或隐藏。`config.modules` 中没有 `tickets` 开关，Agent 不得把门票列为第七个模块或要求用户单独确认。
-
-### Round 2: missing materials
-
-Agent 只检查已启用模块，把所有缺失、冲突和歧义放在同一张清单中。用户选择：
-
-- 现在补充材料；或
-- 直接预览，未知部分明确标为待补充。
-
-继续预览不等于授权 Agent 猜测。已经明确的地点、日期和路线端点必须保留。
-
-完整普通生成规则见 [SKILL.md](SKILL.md)。
-
-## What one trip is allowed to change
-
-Ordinary generation may modify only:
-
-- `trip-data.json`
-- trip-specific assets
-
-`trip-data.json > routeMap` and `metadata.assets.routeMaps` are deterministic Builder output fields and should not be handwritten. Do not edit Golden CSS, core HTML/JS, bookkeeping algorithms, map style, navigation, responsive behavior, or module mechanics unless the user explicitly enters DIY mode.
-
-## Directory overview
-
-```text
-.
-├── index.html                       冻结页面结构
-├── styles.css                       冻结 Travel UI
-├── ledger.css                       冻结记账 UI
-├── app.js                           航班、Timeline、门票、To Do、自驾
-├── overview-map.js                  通用地图 Renderer
-├── route-ui.js                      地图切换与交互
-├── site-navigation.js               模块与 Travel/记账导航
-├── ledger.js                        记账行为与算法
-├── runtime-storage.js               本地优先 / D1 可选存储层
-├── trip-data.json                   唯一旅行数据（含 config、map 与生成的 routeMap）
-├── assets/maps/                     十张固定底图、模板清单与旧地图参考
-├── schemas/                         单文件输入与 advanced 兼容 Schema
-├── scripts/                         地图生成、数据编译与结果校验
-├── optional/cloudflare-d1/          可选 D1 Function 与 migration模板
-├── references/                      工作流、部署与 Golden 合同
-├── local-preview-server.mjs         本地预览服务器
-└── SKILL.md                         Agent 工作入口
-```
-
-## Local preview
-
-```bash
+如需重新生成地图或检查当前数据：
+```arduino
 npm run build:map
 npm run validate
-npm run preview
 ```
 
-Open the exact local address printed by the successful preview process. The Agent must verify and include that address as a clickable final link. This is a local preview only, not a public deployment.
+---
 
-## Maps
+## 分享网页
 
-Maps use `trip-data.json > map` and the fixed `scripts/build-map.mjs` renderer. Users never choose a map mode, and Agents never draw or restyle a map. `map.mapMode` remains `template-auto` and `map.templateId` remains `auto`.
+默认生成的是本地可运行版本。
 
-The manifest registers ten fixed WebP templates. The Builder derives route metrics such as span, orientation, density, connectivity, and long jumps to form a suitable candidate pool. It then applies a stable hash of the trip's region, place IDs, and route order to choose one candidate deterministically. The manifest's `selectionRole` values document template intent; the Builder does not execute those strings as selection rules.
+如果之后希望分享给朋友，可以继续部署到：
+```
+本地网页
+↓
+GitHub
+↓
+Cloudflare Pages
+↓
+[可选] Cloudflare D1
+```
 
-`template-auto` is the authored input mode. Each generated `routeMap.regions[]` entry records `mapMode: "frozen-template"`, the selected `templateId`, and its manifest-backed `baseImage`. This output value must not be copied back into `trip-data.json > map.mapMode`.
+Cloudflare D1 只在需要多人 / 多设备共享记账、To Do、Ticket 等数据时才需要。
 
-The old `country-golden` / `generic-diagram` Boundary workflow is retained only as advanced/legacy reference material. Ordinary generation does not read a Boundary, create a country outline, or select between those modes.
+---
 
-Map content is driven only by `trip-data.json > map.region`, `map.places`, `map.routes`, and `map.dailyRoutes`, plus trip place-area names used by the automatic classifier. Visual tokens and generic layout slots are renderer-owned and are not trip inputs.
+## 数据与隐私
 
-Overview and every Daily view share the same fixed template, canvas, viewBox, scale, and place coordinates. Daily switching changes only the active route, relevant places, labels, and transport pins.
+旅行资料会写入你自己的项目中。
 
-## Hero destination title
+如果页面中包含酒店地址、订单信息、门禁信息、联系方式等内容，请根据自己的分享范围决定是否保留。
 
-Hero title selection is independent from map selection. Domestic China trips display `trip.primaryDestinationName`, preserving the destination wording in the user's plan, such as `内蒙古`, `成都`, or `新疆`, and never display `中国`. Only when that field is absent does the renderer fall back to `primaryDestinationCity` or the first `citiesAndAreas` value. International trips display destination country names; multi-country titles use `国家 × 国家`. A user-requested `trip.heroTitle` overrides display only and does not change map mode or trip geography.
+不要把 API Token、Private Key、数据库密码等开发密钥提交到公开 GitHub 仓库。
 
-## Validate a generated trip
+---
 
-`npm run validate` runs `validate-lite` against the single `trip-data.json`. It checks only failure-critical items: JSON validity, basic trip/day data, nested config and enabled-module data or explicit pending state, map region/places/routes, the fixed-template manifest and referenced base images, obvious development secrets, and required core files.
+## About
 
-It does not run provenance, migration, Entity, Stable ID, full schema, or architecture validation.
+这个项目最开始是我为自己的旅行制作的一个网页。
 
-## Publish later
+后来把航班、每日行程、地图、门票、To Do 和多人记账逐步放进了同一个页面，并整理成现在这套可以被 AI 快速复用的轻量模板。
 
-The default output is local. If the user later asks to publish or share it, GitHub can provide version management and Cloudflare Pages can provide public hosting. Cloudflare D1 is optional and only needed for shared, multi-device data such as bookkeeping, To Do, or ticket state. This generation workflow does not create repositories, log into services, configure D1, or claim deployment was completed.
+希望它也能帮助你更方便地整理自己的旅行计划。
 
-## Privacy checklist
+---
 
-The local personal page keeps the travel content supplied by the user, including complete ticket PDFs, ticket numbers, QR codes, Booking PINs, booking references, phone numbers, hotel access instructions, flights, orders, dates, and routes. Unless the user explicitly asks for it, the Agent must not hide, redact, crop, delete, or recommend removing this content during extraction, either confirmation round, or first generation.
+## License
 
-Only in the final handoff, after providing the working local link, warn once: “当前是本地页面。如果以后公开部署，页面内容可能被任何人访问；是否移除或隐藏敏感内容、增加访问保护，由你自行决定。” This is a neutral choice for the user, not a request to change the local page.
-
-Development credentials must never be written into a static page or public repository: API tokens, Cloudflare or GitHub secrets, passwords, private keys, database credentials, or environment secrets are prohibited.
-
-## Frozen contracts
-
-- [Golden Contract](references/golden-contract.md)
-- [Golden UI](references/golden-ui-spec.md)
-- [Golden Behavior](references/golden-behavior-spec.md)
-- [Golden Map](references/golden-map-spec.md)
-- [Golden 记账](references/golden-ledger-spec.md)
-- [Known Issues](references/known-issues.md)
-
-单次生成可以更换事实与资产，但不能重新设计页面、重写记账算法或修改通用能力。通用能力的改变必须作为独立的框架维护任务完成、验证并更新 Core integrity manifest。
+MIT
