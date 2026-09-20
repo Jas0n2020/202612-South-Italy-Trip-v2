@@ -477,14 +477,13 @@ function dayCard(day) {
       <span class="day-dot" aria-hidden="true"></span>
       <button class="day-toggle" type="button" aria-expanded="${expanded}" aria-controls="day-detail-${day.day}">
 <span>
-        <span class="day-meta" style="display: block; text-align: left;">
-          <span style="display: block; font-size: 0.8rem; font-weight: 700; line-height: 1.2;">DAY ${String(day.day).padStart(2, "0")}</span>
-          <span style="display: block; font-size: 0.85rem; font-weight: 600; line-height: 1.3; margin-top: 2px;">${escapeHtml(formatCompactDate(day.date))}${isToday ? " · 今天" : ""}</span>
-        </span>
-        <span class="day-title">${escapeHtml(day.title)}</span>
-      </span>
-          ${ticketSummary}
-        </span>
+    <span class="day-meta" style="display: block; text-align: left;">
+      <span style="display: block; font-size: 0.8rem; font-weight: 700; line-height: 1.2;">DAY ${String(day.day).padStart(2, "0")}</span>
+      <span style="display: block; font-size: 0.85rem; font-weight: 600; line-height: 1.3; margin-top: 2px;">${escapeHtml(formatCompactDate(day.date))}${isToday ? " · 今天" : ""}</span>
+    </span>
+    <span class="day-title">${escapeHtml(day.title)}</span>
+</span>
+${ticketSummary}
         <span class="day-chevron" aria-hidden="true">+</span>
       </button>
       <div class="day-detail" id="day-detail-${day.day}" ${expanded ? "" : "hidden"}>
