@@ -40,8 +40,26 @@
   },
   "flights": [
     {
-      "journeyId": "j1",
+      "journeyId": "j0",
       "sequence": 1,
+      "flightNumber": "Eurocity",
+      "airline": { "name": "Train/Eurocity", "nameZh": "欧洲城际火车" },
+      "departure": {
+        "airportCode": "BREDA",
+        "city": "布雷达",
+        "date": "2026-12-24",
+        "time": "17:42"
+      },
+      "arrival": {
+        "airportCode": "ZYR",
+        "city": "布鲁塞尔机场",
+        "date": "2026-12-24",
+        "time": "18:49"
+      }
+    },
+    {
+      "journeyId": "j1",
+      "sequence": 2,
       "flightNumber": "EJU2988",
       "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
       "departure": {
@@ -60,8 +78,25 @@
     {
       "journeyId": "j2",
       "sequence": 1,
+      "flightNumber": "1207333082",
+      "airline": { "name": "Peugeot 208 Auto", "nameZh": "租车自驾" },
+      "departure": {
+        "airportCode": "NAP-STN",
+        "city": "那不勒斯火车站",
+        "date": "2026-12-31",
+        "time": "11:00"
+      },
+      "arrival": {
+        "airportCode": "NAP-AIR",
+        "city": "那不勒斯机场",
+        "date": "2027-01-03",
+        "time": "11:00"
+      }
+    },
+    {
+      "journeyId": "j3",
+      "sequence": 2,
       "flightNumber": "EJU4231",
-      "bookingReference": "KDDKG28",
       "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
       "departure": {
         "airportCode": "NAP",
@@ -79,94 +114,24 @@
   ],
   "flightJourneys": [
     {
+      "id": "j0",
+      "title": "交通 1：布雷达至布鲁塞尔机场火车",
+      "placeholder": false
+    },
+    {
       "id": "j1",
-      "title": "去程：布鲁塞尔飞罗马",
+      "title": "交通 2：布鲁塞尔飞罗马航班",
       "placeholder": false
     },
     {
       "id": "j2",
-      "title": "返程：那不勒斯飞阿姆斯特丹",
+      "title": "交通 3：那不勒斯/索伦托租车自驾",
       "placeholder": false
-    }
-  ],
-  "boardingCards": [
-    {
-      "id": "card-1",
-      "type": "train",
-      "title": "TRAIN 01 / 04",
-      "operator": "Eurocity",
-      "departure": {
-        "stationCode": "BREDA",
-        "city": "布雷达",
-        "date": "12月24日",
-        "time": "17:42"
-      },
-      "arrival": {
-        "stationCode": "BRU AIRPORT",
-        "city": "布鲁塞尔机场",
-        "date": "12月24日",
-        "time": "18:49"
-      },
-      "info": "直达 1h07m · €17.30"
     },
     {
-      "id": "card-2",
-      "type": "flight",
-      "title": "FLIGHT 02 / 04",
-      "operator": "易捷航空",
-      "flightNumber": "EJU2988",
-      "departure": {
-        "airportCode": "BRU",
-        "city": "布鲁塞尔",
-        "date": "12月24日",
-        "time": "20:55"
-      },
-      "arrival": {
-        "airportCode": "FCO",
-        "city": "罗马",
-        "date": "12月24日",
-        "time": "23:00"
-      }
-    },
-    {
-      "id": "card-3",
-      "type": "car_rental",
-      "title": "RENTAL 03 / 04",
-      "operator": "租车公司",
-      "vehicle": "Peugeot 208 Automatic",
-      "bookingReference": "1207333082",
-      "pickup": {
-        "locationCode": "NAP RAILWAY",
-        "city": "那不勒斯火车站",
-        "date": "12月31日",
-        "time": "11:00"
-      },
-      "dropoff": {
-        "locationCode": "NAP AIRPORT",
-        "city": "那不勒斯机场",
-        "date": "1月3日",
-        "time": "11:00"
-      }
-    },
-    {
-      "id": "card-4",
-      "type": "flight",
-      "title": "FLIGHT 04 / 04",
-      "operator": "易捷航空",
-      "flightNumber": "EJU4231",
-      "bookingReference": "KDDKG28",
-      "departure": {
-        "airportCode": "NAP",
-        "city": "那不勒斯",
-        "date": "1月3日",
-        "time": "13:25"
-      },
-      "arrival": {
-        "airportCode": "AMS",
-        "city": "阿姆斯特丹",
-        "date": "1月3日",
-        "time": "16:05"
-      }
+      "id": "j3",
+      "title": "交通 4：那不勒斯飞阿姆斯特丹航班",
+      "placeholder": false
     }
   ],
   "days": [
