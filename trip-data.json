@@ -122,7 +122,7 @@
         { "time": "下午", "text": "出门前往 Breda 火车站" },
         { "time": "17:42", "text": "火车 Breda - Brussels Airport (Zaventem) [Eurocity 17:42 - 18:49, €17.30]", "type": "transport" },
         { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO [EJU2988 20:55 - 23:00]", "type": "transport" },
-        { "time": "23:00","text": "罗马 FCO 机场前往民宿入住 <button class=\"tip-btn\" data-tip-key=\"fco-transit\">TIPS</button>"}
+        { "time": "23:00", "text": "罗马 FCO 机场前往民宿入住 <button class='tip-btn' data-tip-key='fco-transit'>TIPS</button>" }
       ],
       "notes": ["请提前准备好护照及机票、火车票凭证。"]
     },
