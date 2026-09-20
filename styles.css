@@ -242,3 +242,32 @@ main { overflow: hidden; }
   background: var(--lake);
   color: white;
 }
+/* 1. 调整整个行程标题区域的容器，使其更靠左、间距更紧凑 */
+.itinerary-day-header, 
+.day-title-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 8px; /* 让 DAY XX 和 日期/星期 之间更紧凑 */
+    margin-left: 0 !important; /* 强制靠左，消除多余的左侧内边距 */
+    padding-left: 0 !important;
+}
+
+/* 2. 把 DAY XX 和日期星期的字体放大，增强视觉层级 */
+.day-badge, 
+.day-number {
+    font-size: 1.25rem; /* 可根据需要调大或调小 */
+    font-weight: 700;
+}
+
+.day-date-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* 3. 为右侧的行程内容/地点释放更多空间，防止显得逼仄 */
+.itinerary-content, 
+.day-content-wrapper {
+    flex: 1;
+    min-width: 0; /* 防止内容过长撑破布局 */
+}
