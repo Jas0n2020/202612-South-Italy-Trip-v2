@@ -457,7 +457,7 @@ function dayCard(day) {
       <li class="schedule-item">
         <span class="schedule-time">${escapeHtml(item.time)}</span>
         <div class="schedule-content">
-          <div class="schedule-text">${escapeHtml(item.text)}</div>
+          <div class="schedule-text">${item.text}</div>
           ${scheduleTickets}
           ${mapLinks ? `<div class="schedule-map-links">${mapLinks}</div>` : ""}
         </div>
