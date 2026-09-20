@@ -151,7 +151,7 @@ function heroDestinationFor(trip) {
     return { title: customTitle, eyebrow: String(trip.heroEyebrow || "").trim(), destinations, isDomestic };
   }
   if (isDomestic) {
-    const destination = String(trip.primaryDestinationName || trip.primaryDestinationCity || trip.citiesAndAreas?.[0] || "目的地待补充").trim();
+    const destination = String(trip.primaryDestinationName || trip.primaryDestinationCity || trip.citiesAndAreas?.[0] || "罗马-那不勒斯-索伦托").trim();
     return {
       title: destination,
       eyebrow: String(trip.primaryDestinationNameEn || trip.primaryDestinationCityEn || "DOMESTIC JOURNEY").trim(),
@@ -160,7 +160,7 @@ function heroDestinationFor(trip) {
     };
   }
   return {
-    title: destinations.map((country) => country.nameZh || country.name).join(" × ") || "目的地待补充",
+    title: destinations.map((country) => country.nameZh || country.name).join(" × ") || "罗马-那不勒斯-索伦托",
     eyebrow: destinations.map((country) => country.nameEn || country.name).filter(Boolean).join(" × "),
     destinations,
     isDomestic
