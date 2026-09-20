@@ -242,74 +242,51 @@ main { overflow: hidden; }
   background: var(--lake);
   color: white;
 }
-/* 1. 调整整个行程标题区域的容器，使其更靠左、间距更紧凑 */
-.itinerary-day-header, 
-.day-title-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 8px; /* 让 DAY XX 和 日期/星期 之间更紧凑 */
-    margin-left: 0 !important; /* 强制靠左，消除多余的左侧内边距 */
-    padding-left: 0 !important;
-}
-/* 1. 恢复整体按钮布局，保持紧凑和左对齐 */
+/* 1. 强制最外层的卡片按钮顶格靠左，清空所有内外部边距 */
+article.day-card button.day-toggle,
 .day-toggle {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 12px !important;
     text-align: left !important;
     width: 100% !important;
-}
-/* 1. 将整个行程卡片按钮改为更灵活的网格布局：左侧上下两行，右侧固定放置 + 按钮 */
-.day-toggle {
-    display: grid !important;
-    grid-template-columns: auto 1fr auto !important; /* 左侧日期列、中间地点列、右侧+按钮列 */
-    grid-template-rows: auto auto !important;         /* 上下两行 */
-    align-items: center !important;
-    text-align: left !important;
-    width: 100% !important;
-    padding: 12px 16px !important;
-    gap: 2px 12px !important;                        /* 控制行间距与列间距 */
-}
-/* 1. 强制整个行程卡片按钮靠左，清除默认的内边距和外边距 */
-.day-toggle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    text-align: left !important;
-    width: 100% !important;
+    margin: 0 !important;
     margin-left: 0 !important;
-    padding-left: 4px !important; /* 紧贴最左边，留一点微小呼吸感 */
+    padding-left: 0px !important;     /* 紧贴最左侧 */
     padding-right: 12px !important;
-    gap: 12px !important;
+    gap: 8px !important;
 }
 
-/* 2. 让左侧的 DAY XX 和日期保持在同一行（或紧凑排列），整体字号低调精致 */
+/* 2. 让包裹 DAY XX 和日期的容器不留左侧空白 */
+article.day-card .day-meta,
 .day-meta {
     font-size: 0.85rem !important;
     font-weight: 600 !important;
     display: inline-flex !important;
-    align-items: center;
+    align-items: center !important;
     gap: 6px !important;
     white-space: nowrap !important;
     margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
-/* 3. 让右侧的地点/城市标题作为视觉核心，并自动撑满空间 */
+/* 3. 让右侧地点标题紧跟其后，并撑满剩余空间 */
+article.day-card .day-title,
 .day-title {
     flex: 1 !important;
     min-width: 0 !important;
     font-size: 1.05rem !important;
     font-weight: 700 !important;
     text-align: left !important;
+    margin-left: 0 !important;
 }
 
-/* 4. 右侧的 + 号按钮：强制向右对齐 */
-.day-chevron, 
+/* 4. 强制右侧的 + 号按钮靠右对齐 */
+article.day-card .day-chevron,
 .day-toggle .day-chevron,
 .day-toggle svg,
 .day-toggle span[aria-hidden="true"] {
-    margin-left: auto !important; /* 自动推到最右侧 */
+    margin-left: auto !important;     /* 自动推到最右侧 */
+    margin-right: 0 !important;
 }
