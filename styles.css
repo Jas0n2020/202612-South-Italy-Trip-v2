@@ -252,30 +252,39 @@ main { overflow: hidden; }
     margin-left: 0 !important; /* 强制靠左，消除多余的左侧内边距 */
     padding-left: 0 !important;
 }
-/* 1. 调整整个行标题的按钮容器，让布局更紧凑、靠左，给右侧行程腾出空间 */
+/* 1. 恢复整体按钮布局，保持紧凑和左对齐 */
 .day-toggle {
-    display: flex !important;             /* 改用弹性盒以便精确控制横向空间 */
+    display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 16px !important;                 /* 控制左侧日期与右侧城市标题之间的间距 */
+    gap: 12px !important;
     text-align: left !important;
     width: 100% !important;
 }
 
-/* 2. 放大 DAY XX 和日期星期的字体，让它们更紧凑地挨在一起 */
+/* 2. 把 DAY XX 和日期的字号调小，让它们比右侧地点更精致、低调 */
 .day-meta {
-    font-size: 1.15rem !important;        /* 调大字号，你可以按需改成 1.2rem 或更大 */
-    font-weight: 700 !important;
-    letter-spacing: 0.03em;
-    display: inline-flex;
-    gap: 6px;                             /* 让 DAY 01 和后面的 12月24日 周四 更紧凑 */
-    white-space: nowrap;                  /* 防止日期和星期换行挤压 */
+    font-size: 0.85rem !important;        /* 调小字号，让它退居次要地位 */
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px !important;                 /* 大幅缩小 DAY 和日期之间的间距 */
+    white-space: nowrap !important;
 }
 
-/* 3. 让右侧的标题/行程内容占据剩余空间，不再显得逼仄 */
+/* 如果你的 DAY 和 日期 之间是用中间点隔开的，可以顺便让这个点紧凑一点 */
+.day-meta span, .day-meta dot {
+    margin: 0 2px;
+}
+
+/* 3. 让右侧的地点/行程作为绝对主角：字体放大、加粗，撑满剩余空间 */
 .day-title {
     flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 1.05rem !important;       /* 稍微放大地点标题，使其比左侧日期更醒目 */
+    font-weight: 700 !important;
+}
     min-width: 0 !important;
     font-size: 1rem !important;
 }
