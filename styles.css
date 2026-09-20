@@ -90,7 +90,7 @@ main { overflow: hidden; }
   font-weight: 800;
   letter-spacing: 0.16em;
 }
-.hero h1 { margin: 0; max-width: 620px; font-size: clamp(28px, 8vw, 48px); line-height: 0.98; letter-spacing: -0.06em; font-weight: 820; }
+.hero h1 { margin: 0; max-width: 620px; font-size: clamp(32px, 10vw, 56px); line-height: 0.98; letter-spacing: -0.06em; font-weight: 820; }
 .hero__date { margin: 14px 0 0; font: 650 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.03em; }
 
 .section { padding: 44px 18px; scroll-margin-top: 48px; }
