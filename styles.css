@@ -262,29 +262,53 @@ main { overflow: hidden; }
     text-align: left !important;
     width: 100% !important;
 }
+/* 1. 将整个行程卡片按钮改为更灵活的网格布局：左侧上下两行，右侧固定放置 + 按钮 */
+.day-toggle {
+    display: grid !important;
+    grid-template-columns: auto 1fr auto !important; /* 左侧日期列、中间地点列、右侧+按钮列 */
+    grid-template-rows: auto auto !important;         /* 上下两行 */
+    align-items: center !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    gap: 2px 12px !important;                        /* 控制行间距与列间距 */
+}
 
-/* 2. 把 DAY XX 和日期的字号调小，让它们比右侧地点更精致、低调 */
-.day-meta {
-    font-size: 0.85rem !important;        /* 调小字号，让它退居次要地位 */
-    font-weight: 600 !important;
-    display: inline-flex !important;
-    align-items: center;
-    gap: 4px !important;                 /* 大幅缩小 DAY 和日期之间的间距 */
+/* 2. 第一行：DAY XX 标签（放在左侧第一行） */
+.day-badge, 
+.day-number {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
     white-space: nowrap !important;
 }
 
-/* 如果你的 DAY 和 日期 之间是用中间点隔开的，可以顺便让这个点紧凑一点 */
-.day-meta span, .day-meta dot {
-    margin: 0 2px;
+/* 3. 第二行：日期和星期（放在左侧第二行，与 DAY XX 左对齐） */
+.day-meta {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
 }
 
-/* 3. 让右侧的地点/行程作为绝对主角：字体放大、加粗，撑满剩余空间 */
+/* 4. 中间区域：右侧的地点/城市标题（跨上下两行，或者放在右侧大空间） */
 .day-title {
-    flex: 1 !important;
-    min-width: 0 !important;
-    font-size: 1.05rem !important;       /* 稍微放大地点标题，使其比左侧日期更醒目 */
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;                  /* 跨上下两行展示 */
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
-}
     min-width: 0 !important;
-    font-size: 1rem !important;
+}
+
+/* 5. 右侧的 + 号按钮：强制向右对齐 */
+.day-chevron, 
+.day-toggle .day-chevron,
+.day-toggle svg,
+.day-toggle span[aria-hidden="true"] {
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    justify-self: end !important;                   /* 靠右对齐 */
 }
