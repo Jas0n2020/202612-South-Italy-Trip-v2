@@ -480,7 +480,7 @@ function dayCard(day) {
     <span style="font-family: inherit; font-size: 0.75rem; font-weight: 700; line-height: 1.2; opacity: 0.85;">DAY ${String(day.day).padStart(2, "0")}</span>
     <span style="font-family: inherit; font-size: 0.85rem; font-weight: 600; line-height: 1.3; margin-top: 2px;">${escapeHtml(formatCompactDate(day.date))}${isToday ? " · 今天" : ""}</span>
   </span>
-  <span class="day-title" style="font-family: inherit; margin-left: 6px;">${escapeHtml(day.title)}</span>
+  <span class="day-title" style="font-family: inherit; margin-left: 2px;">${escapeHtml(day.title)}</span>
   ${ticketSummary}
         <span class="day-chevron" aria-hidden="true">+</span>
       </button>
