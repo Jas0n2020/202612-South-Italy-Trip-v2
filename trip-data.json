@@ -45,7 +45,7 @@
       {
         "id": "south-italy-route",
         "label": "意大利南部之旅路线图",
-        "baseImage": "assets/maps/aster-isles-base.png",
+        "baseImage": "assets/maps/italy-base.png",
         "canvas": { "width": 1448, "height": 1086 },
         "projection": {
           "bounds": [11.0, 39.5, 15.5, 43.5],
