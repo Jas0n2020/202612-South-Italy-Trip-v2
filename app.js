@@ -115,14 +115,15 @@ function preciseCountdownText(target, completionText = "已出发") {
 function formatDate(dateString, includeYear = false) {
   const date = new Date(`${dateString}T12:00:00`);
   const options = includeYear
-    ? { year: "numeric", month: "long", day: "numeric" }
-    : { month: "long", day: "numeric" };
+    ? { year: "numeric", month: "long", day: "numeric", weekday: "short" }
+    : { month: "long", day: "numeric", weekday: "short" };
   return new Intl.DateTimeFormat("zh-CN", options).format(date);
 }
 
 function formatCompactDate(dateString) {
-  const [, month, day] = dateString.split("-");
-  return `${Number(month)}月${Number(day)}日`;
+  const date = new Date(`${dateString}T12:00:00`);
+  const options = { month: "numeric", day: "numeric", weekday: "short" };
+  return new Intl.DateTimeFormat("zh-CN", options).format(date);
 }
 
 function todayForTrip() {
