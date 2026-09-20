@@ -18,12 +18,13 @@
   },
   "metadata": {
     "tripId": "south-italy-2026",
-    "title": "意大利南部跨年之旅",
+    "title": "2026意大利南部之旅",
     "language": "zh-CN",
     "assets": {}
   },
   "trip": {
     "status": "active",
+    "title": "2026意大利南部之旅",
     "startDate": "2026-12-24",
     "endDate": "2027-01-03",
     "dayCount": 11,
@@ -78,24 +79,6 @@
     {
       "journeyId": "j2",
       "sequence": 1,
-      "flightNumber": "1207333082",
-      "airline": { "name": "Peugeot 208 Auto", "nameZh": "租车自驾" },
-      "departure": {
-        "airportCode": "NAP-STN",
-        "city": "那不勒斯火车站",
-        "date": "2026-12-31",
-        "time": "11:00"
-      },
-      "arrival": {
-        "airportCode": "NAP-AIR",
-        "city": "那不勒斯机场",
-        "date": "2027-01-03",
-        "time": "11:00"
-      }
-    },
-    {
-      "journeyId": "j3",
-      "sequence": 2,
       "flightNumber": "EJU4231",
       "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
       "departure": {
@@ -125,12 +108,7 @@
     },
     {
       "id": "j2",
-      "title": "交通 3：那不勒斯/索伦托租车自驾",
-      "placeholder": false
-    },
-    {
-      "id": "j3",
-      "title": "交通 4：那不勒斯飞阿姆斯特丹航班",
+      "title": "交通 3：那不勒斯飞阿姆斯特丹航班",
       "placeholder": false
     }
   ],
