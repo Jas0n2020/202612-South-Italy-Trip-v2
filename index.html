@@ -144,4 +144,51 @@
     <span>请确认 trip-data.json 已通过生成校验，并与网页位于同一目录。</span>
   </div>
 </body>
+<!-- 全局通用 TIPS 弹窗 -->
+<div id="commonModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; align-items: center; justify-content: center; padding: 20px;">
+  <div style="background: #ffffff; color: #1f2937; max-width: 500px; width: 100%; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); max-height: 85vh; overflow-y: auto; position: relative;">
+    
+    <!-- 标题与关闭按钮 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px;">
+      <h3 id="modalTitle" style="margin: 0; font-size: 18px; font-weight: 700; color: #111827;">TIPS</h3>
+      <button onclick="closeModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #6b7280;">&times;</button>
+    </div>
+    
+    <!-- 正文内容区 -->
+    <div id="modalBody" style="font-size: 14px; line-height: 1.6; text-align: left;"></div>
+
+    <!-- 底部按钮 -->
+    <div style="margin-top: 20px; text-align: right;">
+      <button onclick="closeModal()" style="background: #2563eb; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer;">知道了</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // 通用点击事件监听：只要点击带有 data-tip-title 和 data-tip-content 的按钮，就自动弹出
+  document.addEventListener('click', function(event) {
+    const btn = event.target.closest('.tip-btn');
+    if (btn) {
+      const title = btn.getAttribute('data-tip-title');
+      const content = decodeURIComponent(btn.getAttribute('data-tip-content'));
+      
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalBody').innerHTML = content;
+      document.getElementById('commonModal').style.display = 'flex';
+    }
+  });
+
+  function closeModal() {
+    document.getElementById('commonModal').style.display = 'none';
+  }
+
+  // 点击背景空白处关闭
+  window.onclick = function(event) {
+    var modal = document.getElementById('commonModal');
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
 </html>
