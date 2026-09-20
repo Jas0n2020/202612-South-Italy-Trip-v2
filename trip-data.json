@@ -30,7 +30,8 @@
     "nightCountAway": 10,
     "countries": [
       { "code": "BE", "name": "Belgium", "nameZh": "比利时" },
-      { "code": "IT", "name": "Italy", "nameZh": "意大利" }
+      { "code": "IT", "name": "Italy", "nameZh": "意大利" },
+      { "code": "NL", "name": "Netherlands", "nameZh": "荷兰" }
     ],
     "primaryDestinationCountries": [
       { "code": "IT", "name": "Italy", "nameZh": "意大利" }
@@ -55,12 +56,36 @@
         "date": "2026-12-24",
         "time": "23:00"
       }
+    },
+    {
+      "journeyId": "j2",
+      "sequence": 1,
+      "flightNumber": "EJU4231",
+      "bookingReference": "KDDKG28",
+      "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
+      "departure": {
+        "airportCode": "NAP",
+        "city": "那不勒斯",
+        "date": "2027-01-03",
+        "time": "13:25"
+      },
+      "arrival": {
+        "airportCode": "AMS",
+        "city": "阿姆斯特丹",
+        "date": "2027-01-03",
+        "time": "16:05"
+      }
     }
   ],
   "flightJourneys": [
     {
       "id": "j1",
       "title": "去程：布鲁塞尔飞罗马",
+      "placeholder": false
+    },
+    {
+      "id": "j2",
+      "title": "返程：那不勒斯飞阿姆斯特丹",
       "placeholder": false
     }
   ],
@@ -71,12 +96,12 @@
       "title": "布雷达 ➔ 罗马",
       "locations": ["布雷达", "布鲁塞尔", "罗马"],
       "schedule": [
-        { "time": "下午", "text": "出门去 Breda 火车站" },
-        { "time": "18:42", "text": "火车 Breda - 布鲁塞尔 BRU（提前买票 €17.3）", "type": "transport" },
-        { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO (EJU2988)", "type": "transport" },
+        { "time": "下午", "text": "出门前往 Breda 火车站" },
+        { "time": "17:42", "text": "火车 Breda - 布鲁塞尔机场 Brussels Airport - Zaventem (Eurocity, 17:42 - 18:49, €17.30)", "type": "transport" },
+        { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO (EJU2988, 20:55 - 23:00)", "type": "transport" },
         { "time": "23:00", "text": "罗马 FCO 机场前往民宿入住" }
       ],
-      "notes": ["请提前准备好护照及机票凭证。"]
+      "notes": ["请提前准备好护照及机票、火车票凭证。"]
     },
     {
       "day": 2,
@@ -156,10 +181,10 @@
       "title": "那不勒斯 ➔ 索伦托",
       "locations": ["那不勒斯", "索伦托"],
       "schedule": [
-        { "time": "11:00", "text": "取租车", "type": "transport" },
-        { "time": "下午", "text": "自驾 1.5h 前往索伦托并入住，准备跨年", "type": "transport" }
+        { "time": "11:00", "text": "那不勒斯火车站取租车 (Peugeot 208 Automatic 或同级)", "type": "transport" },
+        { "time": "下午", "text": "自驾前往索伦托并入住，准备跨年", "type": "transport" }
       ],
-      "notes": []
+      "notes": ["租车取车点：Naples Railway Station (Corso Meridionale, 60)", "预订号：1207333082"]
     },
     {
       "day": 9,
@@ -184,14 +209,15 @@
     {
       "day": 11,
       "date": "2027-01-03",
-      "title": "索伦托 ➔ 布雷达",
-      "locations": ["索伦托", "那不勒斯", "布雷达"],
+      "title": "索伦托 ➔ 阿姆斯特丹 ➔ 布雷达",
+      "locations": ["索伦托", "那不勒斯", "阿姆斯特丹", "布雷达"],
       "schedule": [
-        { "time": "白天", "text": "前往那不勒斯 NAP 机场", "type": "transport" },
-        { "time": "下午", "text": "搭乘航班返回并转乘火车回布雷达", "type": "transport" },
+        { "time": "11:00", "text": "前往那不勒斯机场还车 (Naples Airport)", "type": "transport" },
+        { "time": "13:25", "text": "飞机 那不勒斯 NAP - 阿姆斯特丹 AMS (EJU4231, 13:25 - 16:05)", "type": "transport" },
+        { "time": "16:05", "text": "抵达阿姆斯特丹，转乘火车返回布雷达", "type": "transport" },
         { "time": "晚上", "text": "安全到家，圆满结束旅程" }
       ],
-      "notes": []
+      "notes": ["返程航班预订号：KDDKG28"]
     }
   ],
   "ticketPlanning": {
@@ -201,11 +227,26 @@
   "restaurants": [],
   "groundTransport": {
     "rentalCar": {
+      "bookingNumber": "1207333082",
       "company": "租车公司",
-      "pickup": { "date": "2026-12-31", "time": "11:00", "location": "那不勒斯" },
-      "dropoff": { "date": "2027-01-03", "time": "10:00", "vehicleReturnPoint": "那不勒斯机场" },
-      "vehicle": { "example": "标准车型", "class": "SUV/轿车" },
-      "price": { "currency": "EUR", "payAtCounter": 0 }
+      "pickup": {
+        "date": "2026-12-31",
+        "time": "11:00",
+        "location": "Naples Railway Station (Corso Meridionale, 60)"
+      },
+      "dropoff": {
+        "date": "2027-01-03",
+        "time": "11:00",
+        "vehicleReturnPoint": "Naples Airport (Capodichino Airport)"
+      },
+      "vehicle": {
+        "example": "Peugeot 208 Automatic",
+        "class": "Economy Automatic"
+      },
+      "price": {
+        "currency": "EUR",
+        "payAtCounter": 0
+      }
     },
     "rentalChecklist": [],
     "drivingNotes": []
