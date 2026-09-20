@@ -1,4 +1,128 @@
-/* 【安全加大版】Boarding 航班行程卡片字体放大优化 */
+:root {
+  --paper: #f3f6f2;
+  --surface: #ffffff;
+  --ink: #13262f;
+  --muted: #66757a;
+  --line: #d7dfdc;
+  --lake: #287b90;
+  --lake-soft: #d9ebee;
+  --forest: #516b55;
+  --terracotta: #b65c3a;
+  --warning: #b84635;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow: 0 16px 48px rgba(25, 47, 55, 0.08);
+  --content: 720px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { box-sizing: border-box; }
+[data-module][hidden] { display: none !important; }
+html { scroll-behavior: smooth; background: var(--paper); }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(40, 123, 144, 0.035) 1px, transparent 1px),
+    var(--paper);
+  background-size: 100% 32px;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a { touch-action: manipulation; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: white;
+  border-radius: 10px;
+}
+.skip-link:focus { top: calc(12px + var(--safe-top)); }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: calc(48px + var(--safe-top));
+  padding: var(--safe-top) 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(19, 38, 47, 0.08);
+  background: rgba(243, 246, 242, 0.91);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.wordmark { min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 800; letter-spacing: 0.06em; font-size: 12px; }
+.wordmark span { color: var(--muted); font-weight: 600; }
+.topbar nav { display: flex; gap: 2px; }
+.topbar nav a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 650;
+}
+.topbar nav a:active { color: var(--lake); }
+
+main { overflow: hidden; }
+.hero, .section, .footer { width: min(100%, var(--content)); margin-inline: auto; }
+.hero { padding: 32px 18px 24px; min-height: 188px; display: flex; flex-direction: column; justify-content: flex-end; }
+.hero__eyebrow, .section-kicker {
+  margin: 0 0 10px;
+  color: var(--lake);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.hero h1 { margin: 0; max-width: 620px; font-size: clamp(38px, 12vw, 64px); line-height: 0.98; letter-spacing: -0.06em; font-weight: 820; }
+.hero__date { margin: 14px 0 0; font: 650 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.03em; }
+
+.section { padding: 44px 18px; scroll-margin-top: 48px; }
+.flights-section { padding-top: 24px; padding-bottom: 34px; }
+.section-heading { margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.section-heading h2 { margin: 0; font-size: 30px; line-height: 1; letter-spacing: -0.04em; }
+.section-index, .soft-label { margin: 0; color: var(--muted); font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
+
+.flight-carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  padding: 2px 0 14px;
+}
+.flight-carousel::-webkit-scrollbar { display: none; }
+.flight-card {
+  flex: 0 0 calc(100% - 20px);
+  scroll-snap-align: center;
+  min-height: 330px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  color: #eff8f8;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 【已应用】Boarding 航班行程卡片字体放大优化 */
 .flight-card__top { color: #c2dbe0; font: 700 16px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
 .flight-card__airlines { margin-top: 7px; color: #92b5bc; font-size: 14px; }
 .flight-flow { margin-top: 17px; display: grid; grid-template-columns: var(--route-columns); align-items: start; }
@@ -9,12 +133,90 @@
 .flight-stop__city { display: block; min-height: 30px; margin-top: 5px; color: #cfe0e3; font-size: 15px; line-height: 1.25; }
 .flight-stop__dot { position: relative; z-index: 1; display: inline-block; width: 9px; height: 9px; margin: 8px 0 10px; border: 2px solid #8fc6d0; border-radius: 50%; background: var(--ink); }
 .flight-stop__timing { display: flex; flex-direction: column; gap: 4px; color: #b5ccd1; font-size: 13px; line-height: 1.3; }
-.flight-stop__timing b { color: #ffffff; font-size: 16px; font-weight: 760; } /* 将起降时间数字改大 */
-.flight-stop__timing em { color: #f0c29f; font-style: normal; font-size: 13px; } /* 将日期文字适当调大 */
+.flight-stop__timing b { color: #ffffff; font-size: 16px; font-weight: 760; }
+.flight-stop__timing em { color: #f0c29f; font-style: normal; font-size: 13px; }
 .flight-segment { min-width: 0; padding-top: 53px; color: #a5d2da; text-align: center; }
-.flight-segment span { display: block; overflow: hidden; font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; text-overflow: ellipsis; white-space: nowrap; } /* 航班号/交通工具名称放大 */
+.flight-segment span { display: block; overflow: hidden; font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; text-overflow: ellipsis; white-space: nowrap; }
 .flight-segment i { display: block; height: 1px; margin-top: 9px; background: rgba(143,198,208,.5); color: #8fc6d0; font-style: normal; font-size: 15px; line-height: 1px; text-align: right; }
 .flight-card__countdown-row { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.16); }
 .flight-countdown { text-align: left; }
 .flight-countdown span { display: block; color: #c2dbe0; font-size: 14px; }
 .flight-countdown strong { display: block; margin-top: 5px; color: #fff; font: 760 clamp(30px, 9vw, 42px)/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+.flight-placeholder { margin: 34px 0 22px; }
+.flight-placeholder__eyebrow { color: #e0a983; font: 760 10px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+.flight-placeholder h3 { margin: 9px 0 0; color: #fff; font-size: clamp(24px, 7vw, 34px); line-height: 1.08; letter-spacing: -.035em; }
+.flight-placeholder p { max-width: 520px; margin: 12px 0 0; color: #b8cccf; font-size: 12px; line-height: 1.7; }
+.flight-placeholder ul { margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; list-style: none; }
+.flight-placeholder li { padding: 6px 9px; border: 1px solid rgba(143,198,208,.3); border-radius: 999px; color: #d7e7e8; background: rgba(255,255,255,.04); font-size: 10px; }
+.carousel-dots { display: flex; justify-content: center; gap: 7px; }
+.carousel-dot { width: 6px; height: 6px; border: 0; padding: 0; border-radius: 50%; background: #aebbb8; transition: width .2s ease; }
+.carousel-dot.is-active { width: 22px; border-radius: 99px; background: var(--lake); }
+
+.route-map-button { position: relative; display: block; width: 100%; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow); cursor: zoom-in; }
+.route-map-button img { width: 100%; height: auto; }
+.route-map-button span { position: absolute; right: 12px; bottom: 12px; padding: 9px 12px; border-radius: 999px; color: white; background: rgba(19,38,47,.86); font-size: 11px; font-weight: 700; backdrop-filter: blur(8px); }
+.route-caption { margin: 12px 4px 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+.timeline { position: relative; }
+.timeline::before { content: ""; position: absolute; left: 18px; top: 22px; bottom: 26px; width: 1px; background: var(--line); }
+.day-card { position: relative; padding-left: 48px; }
+.day-card + .day-card { margin-top: 8px; }
+.day-dot { position: absolute; left: 12px; top: 25px; z-index: 1; width: 13px; height: 13px; border: 3px solid var(--paper); border-radius: 50%; background: #a5b1ae; box-shadow: 0 0 0 1px #a5b1ae; }
+.day-card.is-today .day-dot { background: var(--terracotta); box-shadow: 0 0 0 3px rgba(182,92,58,.18); }
+.day-toggle { width: 100%; min-height: 78px; padding: 15px 4px; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; display: grid; grid-template-columns: 1fr auto; gap: 12px; cursor: pointer; }
+.day-meta { color: var(--lake); font: 750 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .05em; }
+.day-title { margin-top: 5px; font-size: 17px; font-weight: 740; line-height: 1.35; }
+.day-locations { margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.day-ticket-summary { display: inline-flex; min-height: 24px; margin-top: 9px; padding: 4px 8px; align-items: center; border-radius: 999px; font-size: 10px; font-weight: 760; }
+.day-ticket-summary.has-pending { color: #8f492e; background: #f6e2d8; }
+.day-ticket-summary.is-complete { color: #43654a; background: #dfeade; }
+.day-chevron { width: 36px; height: 36px; align-self: center; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; color: var(--lake); transition: transform .2s ease; }
+.day-toggle[aria-expanded="true"] .day-chevron { transform: rotate(45deg); }
+.day-detail { padding: 18px 0 26px; }
+.day-detail[hidden] { display: none; }
+.schedule { margin: 0; padding: 0; list-style: none; }
+.schedule-item { position: relative; padding: 0 0 21px 82px; min-height: 50px; }
+.schedule-item::before { content: ""; position: absolute; left: 70px; top: 6px; bottom: 0; width: 1px; background: #dce4e2; }
+.schedule-item:last-child::before { display: none; }
+.schedule-time { position: absolute; left: 0; top: 0; width: 62px; color: var(--muted); font: 700 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.schedule-item::after { content: ""; position: absolute; left: 66px; top: 5px; width: 9px; height: 9px; border: 2px solid var(--lake); border-radius: 50%; background: var(--paper); }
+.schedule-text { font-size: 13px; line-height: 1.65; }
+
+/* 第三部分核心样式 */
+.schedule-ticket { min-height: 58px; padding: 9px 10px; background: #fff2ed; display: grid; grid-template-columns: 21px minmax(0,1fr) auto; align-items: flex-start; gap: 9px; }
+.schedule-ticket__toggle { display: contents; cursor: pointer; }
+.schedule-ticket input { position: absolute; opacity: 0; pointer-events: none; }
+.schedule-ticket__check { width: 21px; height: 21px; margin-top: 1px; flex: 0 0 21px; border: 1.5px solid #ba765d; border-radius: 7px; color: transparent; display: grid; place-items: center; font-size: 12px; }
+.schedule-ticket__content { min-width: 0; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 2px 7px; }
+.schedule-ticket__status { color: #995137; font-size: 9px; font-weight: 780; }
+.schedule-ticket__content strong { overflow: hidden; color: var(--ink); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.schedule-ticket__content small { grid-column: 1 / -1; color: #795c50; font-size: 9px; line-height: 1.45; }
+.schedule-ticket__open { align-self: center; min-width: 44px; min-height: 36px; padding: 0 8px; border: 0; border-left: 1px solid rgba(153,81,55,.18); background: transparent; color: #8f492e; cursor: pointer; font-size: 10px; font-weight: 760; }
+.schedule-ticket.is-purchased { border-color: #cbdcca; background: #eaf3e9; }
+.schedule-ticket.is-purchased .schedule-ticket__check { border-color: var(--forest); color: white; background: var(--forest); }
+.schedule-ticket.is-purchased .schedule-ticket__status { color: var(--forest); }
+.schedule-ticket.is-purchased .schedule-ticket__content strong { color: #708072; text-decoration: line-through; }
+.schedule-ticket.is-purchased .schedule-ticket__content small { display: none; }
+.schedule-ticket.is-purchased .schedule-ticket__open { color: var(--forest); border-left-color: rgba(81,107,85,.2); }
+
+.ticket-dialog { width: min(100% - 28px,720px); max-height: min(88dvh,820px); padding: 0; border: 1px solid rgba(19,38,47,.12); border-radius: 20px; background: var(--paper); box-shadow: 0 22px 70px rgba(19,38,47,.2); overflow: hidden; }
+.ticket-dialog[open] { display: flex; flex-direction: column; }
+.ticket-dialog::backdrop { background: rgba(7,18,22,.58); backdrop-filter: blur(3px); }
+.ticket-dialog > header { min-height: 76px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); }
+.ticket-dialog > header span { display: block; color: var(--lake); font-size: 10px; font-weight: 780; letter-spacing: .12em; }
+.ticket-dialog > header h2 { margin: 5px 0 0; font-size: 21px; letter-spacing: -.035em; }
+.ticket-dialog > header button { min-width: 52px; min-height: 40px; border: 0; border-radius: 999px; background: white; color: var(--lake); cursor: pointer; font-size: 12px; font-weight: 720; }
+.ticket-dialog__body { min-height: 0; padding: 18px; overflow: auto; flex: 1 1 auto; }
+
+@media (min-width: 700px) {
+  .topbar { padding-inline: max(24px, calc((100vw - var(--content)) / 2)); }
+  .hero { min-height: 260px; padding-inline: 0; }
+  .section { padding-inline: 0; }
+  .flight-card { flex-basis: 86%; min-height: 350px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
