@@ -28,168 +28,186 @@
     "endDate": "2027-01-03",
     "dayCount": 11,
     "nightCountAway": 10,
-    "countries": ["Italy", "Belgium"],
-    "primaryDestinationCountries": ["Italy"],
+    "countries": [
+      { "code": "BE", "name": "Belgium", "nameZh": "比利时" },
+      { "code": "IT", "name": "Italy", "nameZh": "意大利" }
+    ],
+    "primaryDestinationCountries": [
+      { "code": "IT", "name": "Italy", "nameZh": "意大利" }
+    ],
     "citiesAndAreas": ["罗马", "那不勒斯", "索伦托"]
   },
   "flights": [
     {
-      "code": "EJU2988",
-      "airline": "EasyJet",
-      "fromCode": "BRU",
-      "fromCity": "布鲁塞尔",
-      "toCode": "FCO",
-      "toCity": "罗马 Fiumicino",
-      "date": "2026-12-24",
-      "depTime": "20:55",
-      "arrTime": "23:00",
-      "duration": "2h 05m",
-      "pnr": "KDDKF95",
-      "terminal": "T1"
+      "journeyId": "j1",
+      "sequence": 1,
+      "flightNumber": "EJU2988",
+      "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
+      "departure": {
+        "airportCode": "BRU",
+        "city": "布鲁塞尔",
+        "date": "2026-12-24",
+        "time": "20:55"
+      },
+      "arrival": {
+        "airportCode": "FCO",
+        "city": "罗马",
+        "date": "2026-12-24",
+        "time": "23:00"
+      }
     }
   ],
-  "itinerary": [
+  "flightJourneys": [
+    {
+      "id": "j1",
+      "title": "去程：布鲁塞尔飞罗马",
+      "placeholder": false
+    }
+  ],
+  "days": [
     {
       "day": 1,
       "date": "2026-12-24",
-      "displayDate": "Dec-24 Thu",
-      "city": "布雷达 ➔ 罗马",
-      "nodes": [
-        { "type": "start", "title": "出门去 Breda 火车站" },
-        { "type": "transport", "title": "Breda - 布鲁塞尔 BRU 火车", "desc": "17:42 - 18:49 / 18:42 - 19:49（提前买票 €17.3）" },
-        { "type": "transport", "title": "布鲁塞尔 BRU - 罗马 FCO 飞机", "desc": "20:55 - 23:00 (EasyJet)" },
-        { "type": "end", "title": "罗马 FCO 机场前往民宿" }
-      ]
+      "title": "布雷达 ➔ 罗马",
+      "locations": ["布雷达", "布鲁塞尔", "罗马"],
+      "schedule": [
+        { "time": "下午", "text": "出门去 Breda 火车站" },
+        { "time": "18:42", "text": "火车 Breda - 布鲁塞尔 BRU（提前买票 €17.3）", "type": "transport" },
+        { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO (EJU2988)", "type": "transport" },
+        { "time": "23:00", "text": "罗马 FCO 机场前往民宿入住" }
+      ],
+      "notes": ["请提前准备好护照及机票凭证。"]
     },
     {
       "day": 2,
       "date": "2026-12-25",
-      "displayDate": "Dec-25 Fri",
-      "city": "罗马",
-      "nodes": [
-        { "type": "start", "title": "民宿出发" },
-        { "type": "spot", "title": "Trevi Fountain (特莱维喷泉)", "desc": "早起人少出片", "tag": "免费打卡" },
-        { "type": "transport", "title": "走路 10 min" },
-        { "type": "spot", "title": "Spanish Steps (西班牙阶梯)", "tag": "免费打卡" },
-        { "type": "transport", "title": "走路 20 min" },
-        { "type": "spot", "title": "Temple of Aesculapius (医神庙)", "tag": "湖畔美景" },
-        { "type": "transport", "title": "电车 150F (Victor Hugo - Farini)" },
-        { "type": "spot", "title": "Papal Basilica of Saint Mary Major (圣母大殿)", "tag": "免费参观" },
-        { "type": "transport", "title": "公车 70 (Ara Coeli - S. Maria Maggiore)" },
-        { "type": "spot", "title": "Widok na Forum Romanum / Portico of the Harmonious Gods", "desc": "古罗马广场视角", "tag": "免费观景" },
-        { "type": "transport", "title": "走路 7 min" },
-        { "type": "spot", "title": "Mouth of Truth (真理之口)", "desc": "在外面看", "tag": "外观打卡" },
-        { "type": "transport", "title": "走路 20 min" },
-        { "type": "spot", "title": "Keyhole of the Order of Malta (马耳他骑士团钥匙孔)", "tag": "窥视圣彼得大教堂" },
-        { "type": "transport", "title": "公车 75 / 115" },
-        { "type": "spot", "title": "Passeggiata del Gianicolo (贾尼科洛林荫大道)", "tag": "日落全景" },
-        { "type": "transport", "title": "走路 5 min" },
-        { "type": "spot", "title": "Fontana dell'Acqua Paola (保禄喷泉)" },
-        { "type": "end", "title": "返回民宿" }
-      ]
+      "title": "罗马城市漫步",
+      "locations": ["罗马"],
+      "schedule": [
+        { "time": "08:00", "text": "Trevi Fountain (特莱维喷泉) - 早起人少出片", "type": "spot" },
+        { "time": "09:30", "text": "Spanish Steps (西班牙阶梯)", "type": "spot" },
+        { "time": "11:00", "text": "Temple of Aesculapius (医神庙)", "type": "spot" },
+        { "time": "13:00", "text": "Papal Basilica of Saint Mary Major (圣母大殿)", "type": "spot" },
+        { "time": "15:00", "text": "Mouth of Truth (真理之口)", "type": "spot" },
+        { "time": "17:00", "text": "Passeggiata del Gianicolo (贾尼科洛林荫大道) 欣赏日落全景", "type": "spot" }
+      ],
+      "notes": []
     },
     {
       "day": 3,
       "date": "2026-12-26",
-      "displayDate": "Dec-26 Sat",
-      "city": "罗马",
-      "nodes": [
-        { "type": "start", "title": "民宿出发" },
-        { "type": "spot", "title": "Pantheon (万神殿)", "desc": "11月1日 预约/买票 €7", "tag": "需购票" },
-        { "type": "transport", "title": "走路 3 min" },
-        { "type": "spot", "title": "Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)", "desc": "免预约门票", "tag": "免费" },
-        { "type": "transport", "title": "公车 51 / 85" },
-        { "type": "spot", "title": "Colosseum (罗马斗兽场)", "desc": "11月26日 预约/买票 €18", "tag": "需购票" },
-        { "type": "transport", "title": "走路 5 min" },
-        { "type": "spot", "title": "Roman Forum (古罗马广场)", "desc": "Colosseum通票", "tag": "通票包含" },
-        { "type": "transport", "title": "走路 5 min" },
-        { "type": "spot", "title": "Monument to Victor Emmanuel II / Caffetteria Italia al Vittoriano (祖国祭坛)", "desc": "9月27日 预约/买票 €18", "tag": "需购票" },
-        { "type": "end", "title": "回民宿" }
-      ]
+      "title": "罗马古迹探秘",
+      "locations": ["罗马"],
+      "schedule": [
+        { "time": "09:00", "text": "Pantheon (万神殿) - 需门票 €7", "type": "spot" },
+        { "time": "10:30", "text": "Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)", "type": "spot" },
+        { "time": "13:30", "text": "Colosseum (罗马斗兽场) - 需门票 €18", "type": "spot" },
+        { "time": "15:30", "text": "Roman Forum (古罗马广场)", "type": "spot" },
+        { "time": "17:00", "text": "Monument to Victor Emmanuel II (祖国祭坛) - 需门票 €18", "type": "spot" }
+      ],
+      "notes": []
     },
     {
       "day": 4,
       "date": "2026-12-27",
-      "displayDate": "Dec-27 Sun",
-      "city": "罗马 / 梵蒂冈",
-      "nodes": [
-        { "type": "start", "title": "民宿出发" },
-        { "type": "spot", "title": "Vatican Museums / Sistine Chapel / Saint Peter's Basilica", "desc": "已预约 9:00 到现场", "tag": "已预约" },
-        { "type": "transport", "title": "走路 11 min" },
-        { "type": "spot", "title": "Monumento di Santa Caterina da Siena / Castel Sant'Angelo (圣天使城堡)" },
-        { "type": "transport", "title": "走路 6 min" },
-        { "type": "spot", "title": "Ponte Umberto I (翁贝托一世桥)" }
-      ]
+      "title": "梵蒂冈与圣天使堡",
+      "locations": ["罗马", "梵蒂冈"],
+      "schedule": [
+        { "time": "09:00", "text": "Vatican Museums / Sistine Chapel / Saint Peter's Basilica (已预约)", "type": "spot" },
+        { "time": "14:00", "text": "Castel Sant'Angelo (圣天使城堡)", "type": "spot" },
+        { "time": "16:00", "text": "Ponte Umberto I (翁贝托一世桥)", "type": "spot" }
+      ],
+      "notes": []
     },
     {
       "day": 5,
       "date": "2026-12-28",
-      "displayDate": "Dec-28 Mon",
-      "city": "罗马 ➔ 那不勒斯",
-      "nodes": [
-        { "type": "start", "title": "民宿出发去火车站" },
-        { "type": "transport", "title": "火车 罗马 - 那不勒斯", "desc": "11:24 - 12:33" },
-        { "type": "end", "title": "入住那不勒斯民宿" }
-      ]
+      "title": "罗马 ➔ 那不勒斯",
+      "locations": ["罗马", "那不勒斯"],
+      "schedule": [
+        { "time": "11:24", "text": "火车 罗马 - 那不勒斯 (11:24 - 12:33)", "type": "transport" },
+        { "time": "下午", "text": "入住那不勒斯民宿并休整" }
+      ],
+      "notes": []
     },
     {
       "day": 6,
       "date": "2026-12-29",
-      "displayDate": "Dec-29 Tue",
-      "city": "那不勒斯",
-      "nodes": [
-        { "type": "start", "title": "那不勒斯自由活动 / 深度游" }
-      ]
+      "title": "那不勒斯深度游",
+      "locations": ["那不勒斯"],
+      "schedule": [
+        { "time": "全天", "text": "那不勒斯老城区与海滨自由活动" }
+      ],
+      "notes": []
     },
     {
       "day": 7,
       "date": "2026-12-30",
-      "displayDate": "Dec-30 Wed",
-      "city": "那不勒斯",
-      "nodes": [
-        { "type": "start", "title": "那不勒斯自由活动" }
-      ]
+      "title": "那不勒斯周边采风",
+      "locations": ["那不勒斯"],
+      "schedule": [
+        { "time": "全天", "text": "那不勒斯周边自由漫步与美食体验" }
+      ],
+      "notes": []
     },
     {
       "day": 8,
       "date": "2026-12-31",
-      "displayDate": "Dec-31 Thu",
-      "city": "索伦托",
-      "nodes": [
-        { "type": "start", "title": "11:00 取车" },
-        { "type": "transport", "title": "自驾 1.5h：那不勒斯 - 索伦托" },
-        { "type": "end", "title": "入住索伦托民宿" }
-      ]
+      "title": "那不勒斯 ➔ 索伦托",
+      "locations": ["那不勒斯", "索伦托"],
+      "schedule": [
+        { "time": "11:00", "text": "取租车", "type": "transport" },
+        { "time": "下午", "text": "自驾 1.5h 前往索伦托并入住，准备跨年", "type": "transport" }
+      ],
+      "notes": []
     },
     {
       "day": 9,
       "date": "2027-01-01",
-      "displayDate": "Jan-01 Fri",
-      "city": "索伦托",
-      "nodes": [
-        { "type": "start", "title": "索伦托跨年休整 / 阿马尔菲海岸游览" }
-      ]
+      "title": "索伦托元旦休整",
+      "locations": ["索伦托"],
+      "schedule": [
+        { "time": "全天", "text": "索伦托小镇慢节奏游览与阿马尔菲海岸远眺" }
+      ],
+      "notes": []
     },
     {
       "day": 10,
       "date": "2027-01-02",
-      "displayDate": "Jan-02 Sat",
-      "city": "索伦托",
-      "nodes": [
-        { "type": "start", "title": "索伦托周边游览" }
-      ]
+      "title": "索伦托周边漫游",
+      "locations": ["索伦托"],
+      "schedule": [
+        { "time": "全天", "text": "索伦托周边深度游玩" }
+      ],
+      "notes": []
     },
     {
       "day": 11,
       "date": "2027-01-03",
-      "displayDate": "Jan-03 Sun",
-      "city": "索伦托 ➔ 布雷达",
-      "nodes": [
-        { "type": "start", "title": "索伦托 - 那不勒斯 NAP" },
-        { "type": "transport", "title": "那不勒斯 NAP - 阿姆 AMS 航班" },
-        { "type": "transport", "title": "阿姆 AMS - Breda 火车/交通" },
-        { "type": "end", "title": "安全到家" }
-      ]
+      "title": "索伦托 ➔ 布雷达",
+      "locations": ["索伦托", "那不勒斯", "布雷达"],
+      "schedule": [
+        { "time": "白天", "text": "前往那不勒斯 NAP 机场", "type": "transport" },
+        { "time": "下午", "text": "搭乘航班返回并转乘火车回布雷达", "type": "transport" },
+        { "time": "晚上", "text": "安全到家，圆满结束旅程" }
+      ],
+      "notes": []
     }
-  ]
+  ],
+  "ticketPlanning": {
+    "items": []
+  },
+  "places": [],
+  "restaurants": [],
+  "groundTransport": {
+    "rentalCar": {
+      "company": "租车公司",
+      "pickup": { "date": "2026-12-31", "time": "11:00", "location": "那不勒斯" },
+      "dropoff": { "date": "2027-01-03", "time": "10:00", "vehicleReturnPoint": "那不勒斯机场" },
+      "vehicle": { "example": "标准车型", "class": "SUV/轿车" },
+      "price": { "currency": "EUR", "payAtCounter": 0 }
+    },
+    "rentalChecklist": [],
+    "drivingNotes": []
+  }
 }
