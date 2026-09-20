@@ -4,12 +4,12 @@
   "config": {
     "schemaVersion": "1.0.0",
     "modules": {
-      "flights": false,
-      "overview": false,
-      "itinerary": false,
-      "todo": false,
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": true,
       "driving": false,
-      "ledger": false
+      "ledger": true
     },
     "language": "zh-CN",
     "persistence": {
@@ -17,80 +17,179 @@
     }
   },
   "metadata": {
-    "tripId": "unconfigured",
-    "title": "旅行计划",
+    "tripId": "south-italy-2026",
+    "title": "意大利南部跨年之旅",
     "language": "zh-CN",
     "assets": {}
   },
   "trip": {
-    "status": "uninitialized",
-    "startDate": null,
-    "endDate": null,
-    "dayCount": 0,
-    "nightCountAway": 0,
-    "countries": [],
-    "primaryDestinationCountries": [],
-    "citiesAndAreas": [],
-    "routeSummary": "",
-    "groupSize": null
+    "status": "active",
+    "startDate": "2026-12-24",
+    "endDate": "2027-01-03",
+    "dayCount": 11,
+    "nightCountAway": 10,
+    "countries": ["Italy", "Belgium"],
+    "primaryDestinationCountries": ["Italy"],
+    "citiesAndAreas": ["罗马", "那不勒斯", "索伦托"]
   },
-  "flightJourneys": [],
-  "flights": [],
-  "accommodations": [],
-  "groundTransport": {
-    "rentalCar": null,
-    "rentalChecklist": [],
-    "drivingNotes": [],
-    "drivingReferenceLinks": [],
-    "plannedRoadLegs": [],
-    "publicTransitAndRail": []
-  },
-  "days": [],
-  "places": [],
-  "restaurants": [],
-  "bookingsAndTickets": [],
-  "ticketPlanning": {
-    "statusStorage": "local",
-    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
-    "items": []
-  },
-  "preTrip": {
-    "packingItems": [],
-    "preparationsExplicitlyMentioned": [],
-    "missingNote": ""
-  },
-  "mapLinks": {
-    "providedGoogleMapsLinks": [],
-    "note": "",
-    "cityLevelNavigationDisabled": false,
-    "navigationPolicy": {
-      "noNavigationTypes": [
-        "flight",
-        "note",
-        "rest"
-      ],
-      "selfNavigationTypes": [
-        "drive",
-        "return",
-        "transfer",
-        "check-in",
-        "check-out",
-        "restaurant",
-        "attraction",
-        "walk",
-        "hike"
+  "flights": [
+    {
+      "code": "EJU2988",
+      "airline": "EasyJet",
+      "fromCode": "BRU",
+      "fromCity": "布鲁塞尔",
+      "toCode": "FCO",
+      "toCity": "罗马 Fiumicino",
+      "date": "2026-12-24",
+      "depTime": "20:55",
+      "arrTime": "23:00",
+      "duration": "2h 05m",
+      "pnr": "KDDKF95",
+      "terminal": "T1"
+    }
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "date": "2026-12-24",
+      "displayDate": "Dec-24 Thu",
+      "city": "布雷达 ➔ 罗马",
+      "nodes": [
+        { "type": "start", "title": "出门去 Breda 火车站" },
+        { "type": "transport", "title": "Breda - 布鲁塞尔 BRU 火车", "desc": "17:42 - 18:49 / 18:42 - 19:49（提前买票 €17.3）" },
+        { "type": "transport", "title": "布鲁塞尔 BRU - 罗马 FCO 飞机", "desc": "20:55 - 23:00 (EasyJet)" },
+        { "type": "end", "title": "罗马 FCO 机场前往民宿" }
       ]
     },
-    "navigationPlaces": []
-  },
-  "issuesAndUncertainties": [],
-  "map": {
-    "schemaVersion": "1.0-lite",
-    "mapMode": "template-auto",
-    "templateId": "auto",
-    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
-    "places": [],
-    "routes": [],
-    "dailyRoutes": []
-  }
+    {
+      "day": 2,
+      "date": "2026-12-25",
+      "displayDate": "Dec-25 Fri",
+      "city": "罗马",
+      "nodes": [
+        { "type": "start", "title": "民宿出发" },
+        { "type": "spot", "title": "Trevi Fountain (特莱维喷泉)", "desc": "早起人少出片", "tag": "免费打卡" },
+        { "type": "transport", "title": "走路 10 min" },
+        { "type": "spot", "title": "Spanish Steps (西班牙阶梯)", "tag": "免费打卡" },
+        { "type": "transport", "title": "走路 20 min" },
+        { "type": "spot", "title": "Temple of Aesculapius (医神庙)", "tag": "湖畔美景" },
+        { "type": "transport", "title": "电车 150F (Victor Hugo - Farini)" },
+        { "type": "spot", "title": "Papal Basilica of Saint Mary Major (圣母大殿)", "tag": "免费参观" },
+        { "type": "transport", "title": "公车 70 (Ara Coeli - S. Maria Maggiore)" },
+        { "type": "spot", "title": "Widok na Forum Romanum / Portico of the Harmonious Gods", "desc": "古罗马广场视角", "tag": "免费观景" },
+        { "type": "transport", "title": "走路 7 min" },
+        { "type": "spot", "title": "Mouth of Truth (真理之口)", "desc": "在外面看", "tag": "外观打卡" },
+        { "type": "transport", "title": "走路 20 min" },
+        { "type": "spot", "title": "Keyhole of the Order of Malta (马耳他骑士团钥匙孔)", "tag": "窥视圣彼得大教堂" },
+        { "type": "transport", "title": "公车 75 / 115" },
+        { "type": "spot", "title": "Passeggiata del Gianicolo (贾尼科洛林荫大道)", "tag": "日落全景" },
+        { "type": "transport", "title": "走路 5 min" },
+        { "type": "spot", "title": "Fontana dell'Acqua Paola (保禄喷泉)" },
+        { "type": "end", "title": "返回民宿" }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-12-26",
+      "displayDate": "Dec-26 Sat",
+      "city": "罗马",
+      "nodes": [
+        { "type": "start", "title": "民宿出发" },
+        { "type": "spot", "title": "Pantheon (万神殿)", "desc": "11月1日 预约/买票 €7", "tag": "需购票" },
+        { "type": "transport", "title": "走路 3 min" },
+        { "type": "spot", "title": "Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)", "desc": "免预约门票", "tag": "免费" },
+        { "type": "transport", "title": "公车 51 / 85" },
+        { "type": "spot", "title": "Colosseum (罗马斗兽场)", "desc": "11月26日 预约/买票 €18", "tag": "需购票" },
+        { "type": "transport", "title": "走路 5 min" },
+        { "type": "spot", "title": "Roman Forum (古罗马广场)", "desc": "Colosseum通票", "tag": "通票包含" },
+        { "type": "transport", "title": "走路 5 min" },
+        { "type": "spot", "title": "Monument to Victor Emmanuel II / Caffetteria Italia al Vittoriano (祖国祭坛)", "desc": "9月27日 预约/买票 €18", "tag": "需购票" },
+        { "type": "end", "title": "回民宿" }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-12-27",
+      "displayDate": "Dec-27 Sun",
+      "city": "罗马 / 梵蒂冈",
+      "nodes": [
+        { "type": "start", "title": "民宿出发" },
+        { "type": "spot", "title": "Vatican Museums / Sistine Chapel / Saint Peter's Basilica", "desc": "已预约 9:00 到现场", "tag": "已预约" },
+        { "type": "transport", "title": "走路 11 min" },
+        { "type": "spot", "title": "Monumento di Santa Caterina da Siena / Castel Sant'Angelo (圣天使城堡)" },
+        { "type": "transport", "title": "走路 6 min" },
+        { "type": "spot", "title": "Ponte Umberto I (翁贝托一世桥)" }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-12-28",
+      "displayDate": "Dec-28 Mon",
+      "city": "罗马 ➔ 那不勒斯",
+      "nodes": [
+        { "type": "start", "title": "民宿出发去火车站" },
+        { "type": "transport", "title": "火车 罗马 - 那不勒斯", "desc": "11:24 - 12:33" },
+        { "type": "end", "title": "入住那不勒斯民宿" }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-12-29",
+      "displayDate": "Dec-29 Tue",
+      "city": "那不勒斯",
+      "nodes": [
+        { "type": "start", "title": "那不勒斯自由活动 / 深度游" }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-12-30",
+      "displayDate": "Dec-30 Wed",
+      "city": "那不勒斯",
+      "nodes": [
+        { "type": "start", "title": "那不勒斯自由活动" }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-12-31",
+      "displayDate": "Dec-31 Thu",
+      "city": "索伦托",
+      "nodes": [
+        { "type": "start", "title": "11:00 取车" },
+        { "type": "transport", "title": "自驾 1.5h：那不勒斯 - 索伦托" },
+        { "type": "end", "title": "入住索伦托民宿" }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2027-01-01",
+      "displayDate": "Jan-01 Fri",
+      "city": "索伦托",
+      "nodes": [
+        { "type": "start", "title": "索伦托跨年休整 / 阿马尔菲海岸游览" }
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2027-01-02",
+      "displayDate": "Jan-02 Sat",
+      "city": "索伦托",
+      "nodes": [
+        { "type": "start", "title": "索伦托周边游览" }
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2027-01-03",
+      "displayDate": "Jan-03 Sun",
+      "city": "索伦托 ➔ 布雷达",
+      "nodes": [
+        { "type": "start", "title": "索伦托 - 那不勒斯 NAP" },
+        { "type": "transport", "title": "那不勒斯 NAP - 阿姆 AMS 航班" },
+        { "type": "transport", "title": "阿姆 AMS - Breda 火车/交通" },
+        { "type": "end", "title": "安全到家" }
+      ]
+    }
+  ]
 }
