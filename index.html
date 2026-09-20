@@ -143,7 +143,6 @@
     <strong>行程暂时无法载入</strong>
     <span>请确认 trip-data.json 已通过生成校验，并与网页位于同一目录。</span>
   </div>
-</body>
 <!-- 全局通用 TIPS 弹窗 -->
 <div id="commonModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; align-items: center; justify-content: center; padding: 20px;">
   <div style="background: #ffffff; color: #1f2937; max-width: 500px; width: 100%; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); max-height: 85vh; overflow-y: auto; position: relative;">
@@ -166,23 +165,51 @@
 </div>
 
 <script>
-  // 通用点击事件监听：只要点击带有 data-tip-title 和 data-tip-content 的按钮，就自动弹出
+  // 集中管理所有 TIPS 内容库（以后加新内容，直接在这里面加一个名字和对应的 HTML 即可，绝对不会弄乱页面！）
+  const tipContents = {
+    'fco-transit': {
+      title: 'FCO 机场深夜交通 TIPS',
+      content: `
+        <div style="margin: 0 0 12px 0; color: #b45309; background: #fef3c7; padding: 8px 12px; border-radius: 6px; font-size: 13px;">💡 提示：到达时间为 23:00（平安夜深夜），请留意末班车时间或优先选择正规出租车。</div>
+        <p style="font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">1. 公共交通选项 - 末班/深夜大巴：</p>
+        <ul style="margin: 0 0 12px 0; padding-left: 20px;">
+          <li><b>T.A.M. Bus：</b> 约 00:15 和 01:30 有发往 Rome Termini 的班次。</li>
+          <li><b>Terravision / Sit Bus：</b> 通常末班车在 00:00 - 00:30 左右。</li>
+          <li><b>Cotral 夜间大巴：</b> 凌晨 00:45 从 T1/T3 发车往市区。</li>
+          <li><b>乘车地点：</b> 出了 T3 到达大厅后右转前往 Bus Hub。</li>
+          <li><b>购票：</b> 建议站台现场买票或窗口购票（约 6-7 欧元）。</li>
+        </ul>
+        <p style="font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">2. 官方出租车（Taxi）：</p>
+        <p style="margin: 0 0 12px 0;">机场至市区古城墙内为固定统一价，约 50 - 55 欧元（含行李）。请认准 T1 或 T3 出口外的白色正规排队区，切勿搭乘黑车。</p>
+        <p style="font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">3. 网约车 / 接机服务：</p>
+        <p style="margin: 0;">可通过 Uber（多为 Uber Black 高级车）或 FreeNow App 呼叫。</p>
+      `
+    },
+    'malta-tip': {
+      title: 'Keyhole of the Order of Malta TIPS',
+      content: `
+        <div style="margin: 0 0 12px 0; color: #b45309; background: #fef3c7; padding: 8px 12px; border-radius: 6px; font-size: 13px;">💡 提示：建议白天或傍晚前往。</div>
+        <p style="margin: 0;">搭乘地铁 B 线至 Circo Massimo 站，步行上山约 10-15 分钟。</p>
+      `
+    }
+  };
+  // 监听点击事件：通过 data-tip-key 自动匹配弹窗内容
   document.addEventListener('click', function(event) {
     const btn = event.target.closest('.tip-btn');
     if (btn) {
-      const title = btn.getAttribute('data-tip-title');
-      const content = decodeURIComponent(btn.getAttribute('data-tip-content'));
-      
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalBody').innerHTML = content;
-      document.getElementById('commonModal').style.display = 'flex';
+      const key = btn.getAttribute('data-tip-key');
+      const data = tipContents[key];
+      if (data) {
+        document.getElementById('modalTitle').innerText = data.title;
+        document.getElementById('modalBody').innerHTML = data.content;
+        document.getElementById('commonModal').style.display = 'flex';
+      }
     }
   });
 
   function closeModal() {
     document.getElementById('commonModal').style.display = 'none';
   }
-
   // 点击背景空白处关闭
   window.onclick = function(event) {
     var modal = document.getElementById('commonModal');
@@ -191,4 +218,5 @@
     }
   }
 </script>
+</body>
 </html>
