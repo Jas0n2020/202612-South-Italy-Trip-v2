@@ -476,11 +476,11 @@ function dayCard(day) {
     <article class="day-card${isToday ? " is-today" : ""}" data-day="${day.day}">
       <span class="day-dot" aria-hidden="true"></span>
       <button class="day-toggle" type="button" aria-expanded="${expanded}" aria-controls="day-detail-${day.day}">
-<span style="display: flex; flex-direction: column; justify-content: center; text-align: left;">
+<span style="display: flex; flex-direction: column; justify-content: center; text-align: left; width: 100px; flex-shrink: 0;">
   <span style="font-family: inherit; font-size: 0.75rem; font-weight: 700; line-height: 1.2; opacity: 0.85;">DAY ${String(day.day).padStart(2, "0")}</span>
   <span style="font-family: inherit; font-size: 0.85rem; font-weight: 600; line-height: 1.3; margin-top: 2px;">${escapeHtml(formatCompactDate(day.date))}${isToday ? " · 今天" : ""}</span>
 </span>
-<span class="day-title" style="font-family: inherit; margin-left: 12px;">${escapeHtml(day.title)}</span>
+<span class="day-title" style="font-family: inherit; margin-left: 8px;">${escapeHtml(day.title)}</span>
   ${ticketSummary}
         <span class="day-chevron" aria-hidden="true">+</span>
       </button>
