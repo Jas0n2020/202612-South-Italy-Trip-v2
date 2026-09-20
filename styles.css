@@ -252,22 +252,30 @@ main { overflow: hidden; }
     margin-left: 0 !important; /* 强制靠左，消除多余的左侧内边距 */
     padding-left: 0 !important;
 }
-
-/* 2. 把 DAY XX 和日期星期的字体放大，增强视觉层级 */
-.day-badge, 
-.day-number {
-    font-size: 1.25rem; /* 可根据需要调大或调小 */
-    font-weight: 700;
+/* 1. 调整整个行标题的按钮容器，让布局更紧凑、靠左，给右侧行程腾出空间 */
+.day-toggle {
+    display: flex !important;             /* 改用弹性盒以便精确控制横向空间 */
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;                 /* 控制左侧日期与右侧城市标题之间的间距 */
+    text-align: left !important;
+    width: 100% !important;
 }
 
-.day-date-text {
-    font-size: 1.1rem;
-    font-weight: 600;
+/* 2. 放大 DAY XX 和日期星期的字体，让它们更紧凑地挨在一起 */
+.day-meta {
+    font-size: 1.15rem !important;        /* 调大字号，你可以按需改成 1.2rem 或更大 */
+    font-weight: 700 !important;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    gap: 6px;                             /* 让 DAY 01 和后面的 12月24日 周四 更紧凑 */
+    white-space: nowrap;                  /* 防止日期和星期换行挤压 */
 }
 
-/* 3. 为右侧的行程内容/地点释放更多空间，防止显得逼仄 */
-.itinerary-content, 
-.day-content-wrapper {
-    flex: 1;
-    min-width: 0; /* 防止内容过长撑破布局 */
+/* 3. 让右侧的标题/行程内容占据剩余空间，不再显得逼仄 */
+.day-title {
+    flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 1rem !important;
 }
