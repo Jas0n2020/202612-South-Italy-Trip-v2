@@ -39,14 +39,14 @@
     ],
     "citiesAndAreas": ["罗马", "那不勒斯", "索伦托"]
   },
-"routeMap": {
+  "routeMap": {
     "defaultRegionId": "south-italy-route",
     "regions": [
       {
         "id": "south-italy-route",
         "label": "意大利南部之旅路线图",
         "baseImage": "assets/boundaries/countries/IT.geojson",
-        "canvas": { "width": 1448, height: 1086 },
+        "canvas": { "width": 1448, "height": 1086 },
         "projection": {
           "bounds": [6.5, 36.5, 18.5, 47.1],
           "padding": 74
