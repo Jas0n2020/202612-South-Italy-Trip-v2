@@ -39,7 +39,7 @@
     ],
     "citiesAndAreas": ["罗马", "那不勒斯", "索伦托"]
   },
-"routeMap": {
+  "routeMap": {
     "defaultRegionId": "south-italy-route",
     "regions": [
       {
@@ -52,12 +52,12 @@
           "padding": 74
         },
         "heading": { "text": "ITALY TRIP / 意大利南部行程", "x": 33, "y": 105 },
-          "places": [
-           { "id": "netherlands", "geo": { "lng": 4.9041, "lat": 52.3676 }, "lines": ["荷兰 (NL)"] },
-           { "id": "rome", "geo": { "lng": 12.8000, "lat": 42.2000 }, "lines": ["罗马", "Roma"] },
-           { "id": "naples", "geo": { "lng": 14.5000, "lat": 41.2000 }, "lines": ["那不勒斯", "Napoli"] },
-           { "id": "sorrento", "geo": { "lng": 14.8000, "lat": 40.8000 }, "lines": ["索伦托", "Sorrento"] },
-          ],
+        "places": [
+          { "id": "netherlands", "geo": { "lng": 4.9041, "lat": 52.3676 }, "lines": ["荷兰 (NL)"] },
+          { "id": "rome", "geo": { "lng": 12.8000, "lat": 42.2000 }, "lines": ["罗马", "Roma"] },
+          { "id": "naples", "geo": { "lng": 14.5000, "lat": 41.2000 }, "lines": ["那不勒斯", "Napoli"] },
+          { "id": "sorrento", "geo": { "lng": 14.8000, "lat": 40.8000 }, "lines": ["索伦托", "Sorrento"] }
+        ],
         "routes": [
           {
             "day": 1,
