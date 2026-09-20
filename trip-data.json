@@ -116,8 +116,8 @@
     {
       "day": 1,
       "date": "2026-12-24",
-      "title": "布雷达 ➔ 罗马",
-      "locations": ["布雷达", "布鲁塞尔", "罗马"],
+      "title": "启程日",
+      "locations": [],
       "schedule": [
         { "time": "下午", "text": "出门前往 Breda 火车站" },
         { "time": "17:42", "text": "火车 Breda - Brussels Airport (Zaventem) [Eurocity 17:42 - 18:49, €17.30]", "type": "transport" },
@@ -130,7 +130,7 @@
       "day": 2,
       "date": "2026-12-25",
       "title": "罗马城市漫步",
-      "locations": ["罗马"],
+      "locations": [],
       "schedule": [
         { "time": "08:00", "text": "Trevi Fountain (特莱维喷泉) - 早起人少出片", "type": "spot" },
         { "time": "09:30", "text": "Spanish Steps (西班牙阶梯)", "type": "spot" },
@@ -145,7 +145,7 @@
       "day": 3,
       "date": "2026-12-26",
       "title": "罗马古迹探秘",
-      "locations": ["罗马"],
+      "locations": [],
       "schedule": [
         { "time": "09:00", "text": "Pantheon (万神殿) - 需门票 €7", "type": "spot" },
         { "time": "10:30", "text": "Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)", "type": "spot" },
@@ -159,7 +159,7 @@
       "day": 4,
       "date": "2026-12-27",
       "title": "梵蒂冈与圣天使堡",
-      "locations": ["罗马", "梵蒂冈"],
+      "locations": [],
       "schedule": [
         { "time": "09:00", "text": "Vatican Museums / Sistine Chapel / Saint Peter's Basilica (已预约)", "type": "spot" },
         { "time": "14:00", "text": "Castel Sant'Angelo (圣天使城堡)", "type": "spot" },
@@ -170,8 +170,8 @@
     {
       "day": 5,
       "date": "2026-12-28",
-      "title": "罗马 ➔ 那不勒斯",
-      "locations": ["罗马", "那不勒斯"],
+      "title": "转场那不勒斯",
+      "locations": [],
       "schedule": [
         { "time": "11:24", "text": "火车 罗马 - 那不勒斯 (11:24 - 12:33)", "type": "transport" },
         { "time": "下午", "text": "入住那不勒斯民宿并休整" }
@@ -182,7 +182,7 @@
       "day": 6,
       "date": "2026-12-29",
       "title": "那不勒斯深度游",
-      "locations": ["那不勒斯"],
+      "locations": [],
       "schedule": [
         { "time": "全天", "text": "那不勒斯老城区与海滨自由活动" }
       ],
@@ -192,7 +192,7 @@
       "day": 7,
       "date": "2026-12-30",
       "title": "那不勒斯周边采风",
-      "locations": ["那不勒斯"],
+      "locations": [],
       "schedule": [
         { "time": "全天", "text": "那不勒斯周边自由漫步与美食体验" }
       ],
@@ -201,8 +201,8 @@
     {
       "day": 8,
       "date": "2026-12-31",
-      "title": "那不勒斯 ➔ 索伦托",
-      "locations": ["那不勒斯", "索伦托"],
+      "title": "前往索伦托跨年",
+      "locations": [],
       "schedule": [
         { "time": "11:00", "text": "取租车 [Naples Railway Station, Corso Meridionale, 60]", "type": "transport" },
         { "time": "下午", "text": "自驾前往索伦托并入住，准备跨年", "type": "transport" }
@@ -213,7 +213,7 @@
       "day": 9,
       "date": "2027-01-01",
       "title": "索伦托元旦休整",
-      "locations": ["索伦托"],
+      "locations": [],
       "schedule": [
         { "time": "全天", "text": "索伦托小镇慢节奏游览与阿马尔菲海岸远眺" }
       ],
@@ -223,7 +223,7 @@
       "day": 10,
       "date": "2027-01-02",
       "title": "索伦托周边漫游",
-      "locations": ["索伦托"],
+      "locations": [],
       "schedule": [
         { "time": "全天", "text": "索伦托周边深度游玩" }
       ],
@@ -232,8 +232,8 @@
     {
       "day": 11,
       "date": "2027-01-03",
-      "title": "索伦托 ➔ 阿姆斯特丹 ➔ 布雷达",
-      "locations": ["索伦托", "那不勒斯", "阿姆斯特丹", "布雷达"],
+      "title": "返程归家",
+      "locations": [],
       "schedule": [
         { "time": "11:00", "text": "前往那不勒斯机场还车 [Naples Airport]", "type": "transport" },
         { "time": "13:25", "text": "飞机 那不勒斯 NAP - 阿姆斯特丹 AMS [EJU4231 13:25 - 16:05]", "type": "transport" },
