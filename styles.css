@@ -273,42 +273,43 @@ main { overflow: hidden; }
     padding: 12px 16px !important;
     gap: 2px 12px !important;                        /* 控制行间距与列间距 */
 }
-
-/* 2. 第一行：DAY XX 标签（放在左侧第一行） */
-.day-badge, 
-.day-number {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    font-size: 0.8rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em;
-    white-space: nowrap !important;
+/* 1. 强制整个行程卡片按钮靠左，清除默认的内边距和外边距 */
+.day-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 4px !important; /* 紧贴最左边，留一点微小呼吸感 */
+    padding-right: 12px !important;
+    gap: 12px !important;
 }
 
-/* 3. 第二行：日期和星期（放在左侧第二行，与 DAY XX 左对齐） */
+/* 2. 让左侧的 DAY XX 和日期保持在同一行（或紧凑排列），整体字号低调精致 */
 .day-meta {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
     font-size: 0.85rem !important;
     font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px !important;
     white-space: nowrap !important;
+    margin-left: 0 !important;
 }
 
-/* 4. 中间区域：右侧的地点/城市标题（跨上下两行，或者放在右侧大空间） */
+/* 3. 让右侧的地点/城市标题作为视觉核心，并自动撑满空间 */
 .day-title {
-    grid-column: 2 !important;
-    grid-row: 1 / span 2 !important;                  /* 跨上下两行展示 */
+    flex: 1 !important;
+    min-width: 0 !important;
     font-size: 1.05rem !important;
     font-weight: 700 !important;
-    min-width: 0 !important;
+    text-align: left !important;
 }
 
-/* 5. 右侧的 + 号按钮：强制向右对齐 */
+/* 4. 右侧的 + 号按钮：强制向右对齐 */
 .day-chevron, 
 .day-toggle .day-chevron,
 .day-toggle svg,
 .day-toggle span[aria-hidden="true"] {
-    grid-column: 3 !important;
-    grid-row: 1 / span 2 !important;
-    justify-self: end !important;                   /* 靠右对齐 */
+    margin-left: auto !important; /* 自动推到最右侧 */
 }
