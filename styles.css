@@ -181,7 +181,16 @@ main { overflow: hidden; }
 .schedule-item:last-child::before { display: none; }
 .schedule-time { position: absolute; left: 0; top: 0; width: 62px; color: var(--muted); font: 700 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .schedule-item::after { content: ""; position: absolute; left: 66px; top: 5px; width: 9px; height: 9px; border: 2px solid var(--lake); border-radius: 50%; background: var(--paper); }
-.schedule-text { font-size: 13px; line-height: 1.65; }
+.schedule-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.schedule-text > a:first-child,
+.schedule-text > .schedule-label { min-width: 0; }
+.schedule-text .tip-btn { margin-left: auto; flex: 0 0 auto; }
 
 /* 第三部分核心样式 */
 .schedule-ticket { min-height: 58px; padding: 9px 10px; background: #fff2ed; display: grid; grid-template-columns: 21px minmax(0,1fr) auto; align-items: flex-start; gap: 9px; }
