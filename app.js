@@ -460,7 +460,7 @@ function dayCard(day) {
           <div class="schedule-content">
             <div class="schedule-transport-note">
               <span class="schedule-transport-mode">${escapeHtml(item.time)}</span>
-              <span>${escapeHtml(item.text)}</span>
+              <span>${item.text}</span>
             </div>
             ${scheduleTickets}
             ${mapLinks ? `<div class="schedule-map-links">${mapLinks}</div>` : ""}
