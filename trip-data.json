@@ -492,16 +492,7 @@
   "ticketPlanning": {
     "items": []
   },
-  "places": [
-    {
-      "id": "trevi-fountain",
-      "name": "Trevi Fountain",
-      "nameZh": "特莱维喷泉",
-      "cityOrArea": "Rome",
-      "address": "Piazza di Trevi, 00187 Roma RM, Italy",
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy"
-    }
-  ],
+  "places": [],
   "restaurants": [],
   "groundTransport": {
     "rentalCar": {
