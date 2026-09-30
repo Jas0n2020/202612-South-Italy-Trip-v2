@@ -454,6 +454,20 @@ function dayCard(day) {
       <button type="button" class="schedule-map-link" data-map-query="${escapeHtml(destination.query)}" data-map-url="${escapeHtml(destination.url || "")}" data-map-label="${escapeHtml(destination.label)}" aria-haspopup="dialog" aria-controls="place-map" aria-label="查看 ${escapeHtml(destination.label)} 的地图">📍 ${escapeHtml(destination.label)}</button>
     `).join("");
     const scheduleTickets = ticketsForSchedule(day, item).map(inlineTicketMarkup).join("");
+    if (item.type === "transport") {
+      return `
+        <li class="schedule-item schedule-item--transport">
+          <div class="schedule-content">
+            <div class="schedule-transport-note">
+              <span class="schedule-transport-mode">${escapeHtml(item.time)}</span>
+              <span>${escapeHtml(item.text)}</span>
+            </div>
+            ${scheduleTickets}
+            ${mapLinks ? `<div class="schedule-map-links">${mapLinks}</div>` : ""}
+          </div>
+        </li>
+      `;
+    }
     return `
       <li class="schedule-item">
         <span class="schedule-time">${escapeHtml(item.time)}</span>
