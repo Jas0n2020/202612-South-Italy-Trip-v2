@@ -191,6 +191,26 @@ main { overflow: hidden; }
 .schedule-text > a:first-child,
 .schedule-text > .schedule-label { min-width: 0; }
 .schedule-text .tip-btn { margin-left: auto; flex: 0 0 auto; }
+.schedule-item--transport {
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 14px;
+}
+.schedule-item--transport::before,
+.schedule-item--transport::after { display: none; }
+.schedule-transport-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  color: #9aa6a3;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.55;
+}
+.schedule-transport-mode {
+  color: #8f9c99;
+  font-weight: 650;
+}
 
 /* 第三部分核心样式 */
 .schedule-ticket { min-height: 58px; padding: 9px 10px; background: #fff2ed; display: grid; grid-template-columns: 21px minmax(0,1fr) auto; align-items: flex-start; gap: 9px; }
