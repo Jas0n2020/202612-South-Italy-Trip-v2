@@ -273,7 +273,7 @@
     {
       "day": 2,
       "date": "2026-12-25",
-      "title": "罗马",
+      "title": "罗马城市漫步",
       "locations": [],
       "schedule": [
         {
@@ -308,7 +308,7 @@
         },
         {
           "time": "13:00",
-          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Widok%20na%20Forum%20Romanum%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Widok na Forum Romanum (免费罗马广场全景视角)</a><br><small><a href=\"https://www.google.com/maps/search/?api=1&query=Portico%20of%20the%20Harmonious%20Gods%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Portico of the Harmonious Gods</a> / <a href=\"https://www.google.com/maps/search/?api=1&query=Portico%20degli%20Dei%20Consenti%2C%20Clivo%20Capitolino%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">L 型石柱</a></small></span> <button class='tip-btn' data-tip-key='harmonious-gods'>TIPS</button>",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Widok%20na%20Forum%20Romanum%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Widok na Forum Romanum (免费罗马广场全景视角)</a><br><small>Portico of the Harmonious Gods / L 型石柱</small></span> <button class='tip-btn' data-tip-key='harmonious-gods'>TIPS</button>",
           "type": "spot"
         },
         {
@@ -357,7 +357,7 @@
         },
         {
           "time": "晚上",
-          "text": "公交回酒店",
+          "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>",
           "type": "transport"
         }
       ],
