@@ -278,9 +278,8 @@
       "schedule": [
         {
           "time": "09:00",
-          "text": "Trevi Fountain (特莱维喷泉) - 早起人少出片 <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>",
-          "type": "spot",
-          "placeId": "trevi-fountain"
+          "text": "<a href=\"https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Trevi Fountain (特莱维喷泉)</a> - 早起人少出片 <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>",
+          "type": "spot"
         },
         {
           "time": "09:30",
