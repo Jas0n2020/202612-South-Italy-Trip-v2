@@ -273,33 +273,92 @@
     {
       "day": 2,
       "date": "2026-12-25",
-      "title": "罗马城市漫步",
+      "title": "罗马",
       "locations": [],
       "schedule": [
         {
           "time": "09:00",
-          "text": "<a href=\"https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Trevi Fountain (特莱维喷泉)</a> - 早起人少出片 <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Trevi Fountain (特莱维喷泉)</a> - 早起人少出片</span> <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>",
           "type": "spot"
+        },
+        {
+          "time": "走路 10 min",
+          "text": "步行前往西班牙阶梯",
+          "type": "transport"
         },
         {
           "time": "09:30",
-          "text": "Spanish Steps (西班牙阶梯)",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Spanish%20Steps%2C%20Piazza%20di%20Spagna%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Spanish Steps (西班牙阶梯)</a></span> <button class='tip-btn' data-tip-key='spanish-steps'>TIPS</button>",
           "type": "spot"
+        },
+        {
+          "time": "公交 15 分钟",
+          "text": "公交前往圣母大殿",
+          "type": "transport"
+        },
+        {
+          "time": "11:00",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Basilica%20Papale%20di%20Santa%20Maria%20Maggiore%2C%20Piazza%20di%20Santa%20Maria%20Maggiore%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Papal Basilica of Saint Mary Major (圣母大殿)</a> <br><small>从 Bar dell'Artista 来自拍照</small></span> <button class='tip-btn' data-tip-key='santa-maria-maggiore'>TIPS</button>",
+          "type": "spot"
+        },
+        {
+          "time": "公交 70",
+          "text": "Ara Coeli - S. Maria Maggiore",
+          "type": "transport"
         },
         {
           "time": "13:00",
-          "text": "Papal Basilica of Saint Mary Major (圣母大殿)",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Widok%20na%20Forum%20Romanum%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Widok na Forum Romanum (免费罗马广场全景视角)</a><br><small><a href=\"https://www.google.com/maps/search/?api=1&query=Portico%20of%20the%20Harmonious%20Gods%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Portico of the Harmonious Gods</a> / <a href=\"https://www.google.com/maps/search/?api=1&query=Portico%20degli%20Dei%20Consenti%2C%20Clivo%20Capitolino%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">L 型石柱</a></small></span> <button class='tip-btn' data-tip-key='harmonious-gods'>TIPS</button>",
           "type": "spot"
+        },
+        {
+          "time": "走路 7 min",
+          "text": "步行前往真理之口",
+          "type": "transport"
+        },
+        {
+          "time": "14:00",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Bocca%20della%20Verit%C3%A0%2C%20Piazza%20della%20Bocca%20della%20Verit%C3%A0%2C%2018%2C%2000186%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Mouth of Truth (真理之口)</a> <br><small>当天关门，在外面看</small></span> <button class='tip-btn' data-tip-key='mouth-of-truth'>TIPS</button>",
+          "type": "spot"
+        },
+        {
+          "time": "走路 20 min",
+          "text": "步行前往马耳他骑士团钥匙孔",
+          "type": "transport"
         },
         {
           "time": "15:00",
-          "text": "Mouth of Truth (真理之口)",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Keyhole%20of%20the%20Order%20of%20Malta%2C%20Piazza%20dei%20Cavalieri%20di%20Malta%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Keyhole of the Order of Malta (一孔三国)</a><br><small><a href=\"https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20D'Illiria%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Giardino degli Aranci 橘子花园</a>（可能未开）</small></span> <button class='tip-btn' data-tip-key='malta-tip'>TIPS</button>",
           "type": "spot"
         },
         {
-          "time": "17:00",
-          "text": "Passeggiata del Gianicolo (贾尼科洛林荫大道) 欣赏日落全景",
+          "time": "公交 75 / 115",
+          "text": "Marmorata - Morosini E. / Morosini E. - P.le Garibaldi G.",
+          "type": "transport"
+        },
+        {
+          "time": "16:00",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Passeggiata%20del%20Gianicolo%2C%20Piazza%20Garibaldi%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Passeggiata del Gianicolo (贾尼科洛山林荫大道)</a> <br><small>360° 无死角俯瞰罗马全景，日落 16:38</small></span> <button class='tip-btn' data-tip-key='gianicolo'>TIPS</button>",
           "type": "spot"
+        },
+        {
+          "time": "走路 5 min",
+          "text": "步行前往保罗喷泉",
+          "type": "transport"
+        },
+        {
+          "time": "17:00",
+          "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Fontana%20dell'Acqua%20Paola%2C%20Via%20Garibaldi%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Fontana dell'Acqua Paola (保罗喷泉)</a></span> <button class='tip-btn' data-tip-key='acqua-paola'>TIPS</button>",
+          "type": "spot"
+        },
+        {
+          "time": "晚餐",
+          "text": "Trastevere 台伯岛附近 / 老城区吃晚餐"
+        },
+        {
+          "time": "晚上",
+          "text": "公交回酒店",
+          "type": "transport"
         }
       ],
       "notes": []
