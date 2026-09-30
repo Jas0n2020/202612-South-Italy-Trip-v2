@@ -259,7 +259,11 @@
         },
         {
           "time": "23:00",
-          "text": "罗马 FCO 机场前往民宿入住 <button class='tip-btn' data-tip-key='fco-transit'>TIPS</button>"
+          "text": "罗马 FCO 机场前往酒店 <button class='tip-btn' data-tip-key='fco-transit'>TIPS</button>"
+        },
+        {
+          "time": "01:00",
+          "text": "入住 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>"
         }
       ],
       "notes": [
