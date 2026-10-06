@@ -121,8 +121,10 @@
 })();
 
 (() => {
-  const script = document.createElement("script");
-  script.src = "dec26-tips.js?v=20261006-1";
-  script.defer = true;
-  document.head.append(script);
+  ["dec26-tips.js?v=20261006-1", "dec27-tips.js?v=20261006-1"].forEach((src) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer = true;
+    document.head.append(script);
+  });
 })();
