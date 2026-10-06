@@ -3,182 +3,38 @@
   "schemaVersion": "2.0-lite",
   "config": {
     "schemaVersion": "1.0.0",
-    "modules": {
-      "flights": true,
-      "overview": true,
-      "itinerary": true,
-      "todo": true,
-      "driving": false,
-      "ledger": true
-    },
+    "modules": { "flights": true, "overview": true, "itinerary": true, "todo": true, "driving": false, "ledger": true },
     "language": "zh-CN",
-    "persistence": {
-      "mode": "local"
-    }
+    "persistence": { "mode": "local" }
   },
-  "metadata": {
-    "tripId": "south-italy-2026",
-    "title": "2026意大利南部之旅",
-    "language": "zh-CN",
-    "assets": {}
-  },
+  "metadata": { "tripId": "south-italy-2026", "title": "2026意大利南部之旅", "language": "zh-CN", "assets": {} },
   "trip": {
-    "status": "active",
-    "title": "2026意大利南部之旅",
-    "startDate": "2026-12-24",
-    "endDate": "2027-01-03",
-    "dayCount": 11,
-    "nightCountAway": 10,
-    "countries": [
-      {
-        "code": "BE",
-        "name": "Belgium",
-        "nameZh": "比利时"
-      },
-      {
-        "code": "IT",
-        "name": "Italy",
-        "nameZh": "意大利"
-      },
-      {
-        "code": "NL",
-        "name": "Netherlands",
-        "nameZh": "荷兰"
-      }
-    ],
-    "primaryDestinationCountries": [
-      {
-        "code": "IT",
-        "name": "Italy",
-        "nameZh": "意大利"
-      }
-    ],
-    "citiesAndAreas": [
-      "罗马",
-      "那不勒斯",
-      "索伦托"
-    ]
+    "status": "active", "title": "2026意大利南部之旅", "startDate": "2026-12-24", "endDate": "2027-01-03", "dayCount": 11, "nightCountAway": 10,
+    "countries": [ { "code": "BE", "name": "Belgium", "nameZh": "比利时" }, { "code": "IT", "name": "Italy", "nameZh": "意大利" }, { "code": "NL", "name": "Netherlands", "nameZh": "荷兰" } ],
+    "primaryDestinationCountries": [ { "code": "IT", "name": "Italy", "nameZh": "意大利" } ],
+    "citiesAndAreas": [ "罗马", "那不勒斯", "索伦托" ]
   },
   "routeMap": {
     "defaultRegionId": "south-italy-route",
     "regions": [
       {
-        "id": "south-italy-route",
-        "label": "意大利南部之旅路线图",
-        "baseImage": "assets/maps/italy-base.png",
-        "canvas": {
-          "width": 1448,
-          "height": 1086
-        },
-        "projection": {
-          "bounds": [
-            11,
-            39.5,
-            15.5,
-            43.5
-          ],
-          "padding": 74
-        },
-        "heading": {
-          "text": "ITALY TRIP / 意大利南部行程",
-          "x": 33,
-          "y": 105
-        },
+        "id": "south-italy-route", "label": "意大利南部之旅路线图", "baseImage": "assets/maps/italy-base.png",
+        "canvas": { "width": 1448, "height": 1086 }, "projection": { "bounds": [ 11, 39.5, 15.5, 43.5 ], "padding": 74 },
+        "heading": { "text": "ITALY TRIP / 意大利南部行程", "x": 33, "y": 105 },
         "places": [
-          {
-            "id": "netherlands",
-            "geo": {
-              "lng": 4.9041,
-              "lat": 52.3676
-            },
-            "lines": [
-              "荷兰 (NL)"
-            ]
-          },
-          {
-            "id": "rome",
-            "geo": {
-              "lng": 12.4964,
-              "lat": 41.9028
-            },
-            "tx": 444,
-            "ty": 498,
-            "anchor": "end",
-            "lines": [
-              "罗马",
-              "Roma"
-            ]
-          },
-          {
-            "id": "naples",
-            "geo": {
-              "lng": 14.2681,
-              "lat": 40.8518
-            },
-            "tx": 1048,
-            "ty": 718,
-            "anchor": "start",
-            "lines": [
-              "那不勒斯",
-              "Napoli"
-            ]
-          },
-          {
-            "id": "sorrento",
-            "geo": {
-              "lng": 14.3758,
-              "lat": 40.6263
-            },
-            "tx": 930,
-            "ty": 805,
-            "anchor": "end",
-            "lines": [
-              "索伦托",
-              "Sorrento"
-            ]
-          }
+          { "id": "netherlands", "geo": { "lng": 4.9041, "lat": 52.3676 }, "lines": [ "荷兰 (NL)" ] },
+          { "id": "rome", "geo": { "lng": 12.4964, "lat": 41.9028 }, "tx": 444, "ty": 498, "anchor": "end", "lines": [ "罗马", "Roma" ] },
+          { "id": "naples", "geo": { "lng": 14.2681, "lat": 40.8518 }, "tx": 1048, "ty": 718, "anchor": "start", "lines": [ "那不勒斯", "Napoli" ] },
+          { "id": "sorrento", "geo": { "lng": 14.3758, "lat": 40.6263 }, "tx": 930, "ty": 805, "anchor": "end", "lines": [ "索伦托", "Sorrento" ] }
         ],
-        "routes": [
-          {
-            "day": 1,
-            "placeIds": [
-              "netherlands",
-              "rome",
-              "naples",
-              "sorrento",
-              "naples",
-              "netherlands"
-            ]
-          }
-        ]
+        "routes": [ { "day": 1, "placeIds": [ "netherlands", "rome", "naples", "sorrento", "naples", "netherlands" ] } ]
       }
     ]
   },
   "flights": [
-    {
-      "journeyId": "j0",
-      "sequence": 1,
-      "flightNumber": "Eurocity",
-      "airline": { "name": "Train/Eurocity", "nameZh": "欧洲城际火车" },
-      "departure": { "airportCode": "BREDA", "city": "布雷达", "date": "2026-12-24", "time": "17:42" },
-      "arrival": { "airportCode": "BRU", "city": "布鲁塞尔机场", "date": "2026-12-24", "time": "18:49" }
-    },
-    {
-      "journeyId": "j1",
-      "sequence": 2,
-      "flightNumber": "EJU2988",
-      "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
-      "departure": { "airportCode": "BRU", "city": "布鲁塞尔", "date": "2026-12-24", "time": "20:55" },
-      "arrival": { "airportCode": "FCO", "city": "罗马", "date": "2026-12-24", "time": "23:00" }
-    },
-    {
-      "journeyId": "j2",
-      "sequence": 1,
-      "flightNumber": "EJU4231",
-      "airline": { "name": "EasyJet", "nameZh": "易捷航空" },
-      "departure": { "airportCode": "NAP", "city": "那不勒斯", "date": "2027-01-03", "time": "13:25" },
-      "arrival": { "airportCode": "AMS", "city": "阿姆斯特丹", "date": "2027-01-03", "time": "16:05" }
-    }
+    { "journeyId": "j0", "sequence": 1, "flightNumber": "Eurocity", "airline": { "name": "Train/Eurocity", "nameZh": "欧洲城际火车" }, "departure": { "airportCode": "BREDA", "city": "布雷达", "date": "2026-12-24", "time": "17:42" }, "arrival": { "airportCode": "BRU", "city": "布鲁塞尔机场", "date": "2026-12-24", "time": "18:49" } },
+    { "journeyId": "j1", "sequence": 2, "flightNumber": "EJU2988", "airline": { "name": "EasyJet", "nameZh": "易捷航空" }, "departure": { "airportCode": "BRU", "city": "布鲁塞尔", "date": "2026-12-24", "time": "20:55" }, "arrival": { "airportCode": "FCO", "city": "罗马", "date": "2026-12-24", "time": "23:00" } },
+    { "journeyId": "j2", "sequence": 1, "flightNumber": "EJU4231", "airline": { "name": "EasyJet", "nameZh": "易捷航空" }, "departure": { "airportCode": "NAP", "city": "那不勒斯", "date": "2027-01-03", "time": "13:25" }, "arrival": { "airportCode": "AMS", "city": "阿姆斯特丹", "date": "2027-01-03", "time": "16:05" } }
   ],
   "flightJourneys": [
     { "id": "j0", "title": "交通 1：布雷达至布鲁塞尔机场火车", "placeholder": false },
@@ -186,127 +42,60 @@
     { "id": "j2", "title": "交通 3：那不勒斯飞阿姆斯特丹航班", "placeholder": false }
   ],
   "days": [
-    {
-      "day": 1,
-      "date": "2026-12-24",
-      "title": "布雷达-布鲁塞尔-罗马",
-      "locations": [],
-      "schedule": [
-        { "time": "下午", "text": "出门前往 Breda 火车站" },
-        { "time": "17:42", "text": "火车 Breda - Brussels Airport (Zaventem) [Eurocity 17:42 - 18:49, €17.30]", "type": "transport" },
-        { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO [EJU2988 20:55 - 23:00]", "type": "transport" },
-        { "time": "23:00", "text": "罗马 FCO 机场前往酒店 <button class='tip-btn' data-tip-key='fco-transit'>TIPS</button>" },
-        { "time": "01:00", "text": "入住 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>" }
-      ],
-      "notes": ["请提前准备好护照及机票、火车票凭证。"]
-    },
-    {
-      "day": 2,
-      "date": "2026-12-25",
-      "title": "罗马城市漫步",
-      "locations": [],
-      "schedule": [
-        { "time": "09:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Trevi Fountain (特莱维喷泉)</a> - 早起人少出片</span> <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>", "type": "spot" },
-        { "time": "走路 10 min", "text": "步行前往西班牙阶梯", "type": "transport" },
-        { "time": "09:30", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Spanish%20Steps%2C%20Piazza%20di%20Spagna%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Spanish Steps (西班牙阶梯)</a></span> <button class='tip-btn' data-tip-key='spanish-steps'>TIPS</button>", "type": "spot" },
-        { "time": "公交 15 分钟", "text": "公交前往圣母大殿", "type": "transport" },
-        { "time": "11:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Basilica%20Papale%20di%20Santa%20Maria%20Maggiore%2C%20Piazza%20di%20Santa%20Maria%20Maggiore%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Papal Basilica of Saint Mary Major (圣母大殿)</a> <br><small>从 Bar dell'Artista 来自拍照</small></span> <button class='tip-btn' data-tip-key='santa-maria-maggiore'>TIPS</button>", "type": "spot" },
-        { "time": "公交 70", "text": "Ara Coeli - S. Maria Maggiore", "type": "transport" },
-        { "time": "13:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Widok%20na%20Forum%20Romanum%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Widok na Forum Romanum (免费罗马广场全景视角)</a><br><small>Portico of the Harmonious Gods / L 型石柱</small></span> <button class='tip-btn' data-tip-key='harmonious-gods'>TIPS</button>", "type": "spot" },
-        { "time": "走路 7 min", "text": "步行前往真理之口", "type": "transport" },
-        { "time": "14:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Bocca%20della%20Verit%C3%A0%2C%20Piazza%20della%20Bocca%20della%20Verit%C3%A0%2C%2018%2C%2000186%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Mouth of Truth (真理之口)</a> <br><small>当天关门，在外面看</small></span> <button class='tip-btn' data-tip-key='mouth-of-truth'>TIPS</button>", "type": "spot" },
-        { "time": "走路 20 min", "text": "步行前往马耳他骑士团钥匙孔", "type": "transport" },
-        { "time": "15:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Keyhole%20of%20the%20Order%20of%20Malta%2C%20Piazza%20dei%20Cavalieri%20di%20Malta%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Keyhole of the Order of Malta (一孔三国)</a><br><small><a href=\"https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20D'Illiria%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Giardino degli Aranci 橘子花园</a>（可能未开）</small></span> <button class='tip-btn' data-tip-key='malta-tip'>TIPS</button>", "type": "spot" },
-        { "time": "公交 75 / 115", "text": "Marmorata - Morosini E. / Morosini E. - P.le Garibaldi G.", "type": "transport" },
-        { "time": "16:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Passeggiata%20del%20Gianicolo%2C%20Piazza%20Garibaldi%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Passeggiata del Gianicolo (贾尼科洛山林荫大道)</a> <br><small>360° 无死角俯瞰罗马全景，日落 16:38</small></span> <button class='tip-btn' data-tip-key='gianicolo'>TIPS</button>", "type": "spot" },
-        { "time": "走路 5 min", "text": "步行前往保罗喷泉", "type": "transport" },
-        { "time": "17:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Fontana%20dell'Acqua%20Paola%2C%20Via%20Garibaldi%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Fontana dell'Acqua Paola (保罗喷泉)</a></span> <button class='tip-btn' data-tip-key='acqua-paola'>TIPS</button>", "type": "spot" },
-        { "time": "晚餐", "text": "Trastevere 台伯岛附近 / 老城区吃晚餐" },
-        { "time": "晚上", "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>", "type": "transport" }
-      ],
-      "notes": []
-    },
-    {
-      "day": 3,
-      "date": "2026-12-26",
-      "title": "罗马古迹探秘",
-      "locations": [],
-      "schedule": [
-        { "time": "09:00", "text": "<span class='schedule-label'>Pantheon (万神殿)<br><small style=\"color: #b84635; font-weight: 800;\">11月1号 预约/买票&nbsp;&nbsp;€7</small></span> <button class='tip-btn' data-tip-key='pantheon'>TIPS</button>", "type": "spot" },
-        { "time": "10:30", "text": "<span class='schedule-label'>Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)</span> <button class='tip-btn' data-tip-key='sant-ignazio'>TIPS</button>", "type": "spot" },
-        { "time": "13:30", "text": "<span class='schedule-label'>Colosseum (罗马斗兽场)<br><small style=\"color: #b84635; font-weight: 800;\">11月26号 预约/买票&nbsp;&nbsp;€18</small></span> <button class='tip-btn' data-tip-key='colosseum'>TIPS</button>", "type": "spot" },
-        { "time": "15:30", "text": "<span class='schedule-label'>Roman Forum (罗马广场)</span> <button class='tip-btn' data-tip-key='roman-forum'>TIPS</button>", "type": "spot" },
-        { "time": "16:15", "text": "<span class='schedule-label'>Palatine Hill (帕拉蒂尼山)</span> <button class='tip-btn' data-tip-key='palatine-hill'>TIPS</button>", "type": "spot" },
-        { "time": "17:00", "text": "<span class='schedule-label'>Monument to Victor Emmanuel II (维托里亚诺 / 祖国祭坛)<br><small style=\"color: #b84635; font-weight: 800;\">上顶层 9月27号 预约/买票&nbsp;&nbsp;€18 - 待定</small><br><small>16:38 日落</small></span> <button class='tip-btn' data-tip-key='vittoriano'>TIPS</button>", "type": "spot" },
-        { "time": "晚上", "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>", "type": "transport" }
-      ],
-      "notes": []
-    },
-    {
-      "day": 4,
-      "date": "2026-12-27",
-      "title": "梵蒂冈与圣天使堡",
-      "locations": [],
-      "schedule": [
-        { "time": "09:00", "text": "Vatican Museums / Sistine Chapel / Saint Peter's Basilica (已预约)", "type": "spot" },
-        { "time": "14:00", "text": "Castel Sant'Angelo (圣天使城堡)", "type": "spot" },
-        { "time": "16:00", "text": "Ponte Umberto I (翁贝托一世桥)", "type": "spot" }
-      ],
-      "notes": []
-    },
-    {
-      "day": 5,
-      "date": "2026-12-28",
-      "title": "转场那不勒斯",
-      "locations": [],
-      "schedule": [
-        { "time": "11:00", "text": "Temple of Aesculapius (医神庙)", "type": "spot" },
-        { "time": "11:24", "text": "火车 罗马 - 那不勒斯 (11:24 - 12:33)", "type": "transport" },
-        { "time": "下午", "text": "入住那不勒斯民宿并休整" }
-      ],
-      "notes": []
-    },
+    { "day": 1, "date": "2026-12-24", "title": "布雷达-布鲁塞尔-罗马", "locations": [], "schedule": [ { "time": "下午", "text": "出门前往 Breda 火车站" }, { "time": "17:42", "text": "火车 Breda - Brussels Airport (Zaventem) [Eurocity 17:42 - 18:49, €17.30]", "type": "transport" }, { "time": "20:55", "text": "飞机 布鲁塞尔 BRU - 罗马 FCO [EJU2988 20:55 - 23:00]", "type": "transport" }, { "time": "23:00", "text": "罗马 FCO 机场前往酒店 <button class='tip-btn' data-tip-key='fco-transit'>TIPS</button>" }, { "time": "01:00", "text": "入住 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>" } ], "notes": [ "请提前准备好护照及机票、火车票凭证。" ] },
+    { "day": 2, "date": "2026-12-25", "title": "罗马城市漫步", "locations": [], "schedule": [
+      { "time": "09:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Trevi Fountain (特莱维喷泉)</a> - 早起人少出片</span> <button class='tip-btn' data-tip-key='trevi-fountain'>TIPS</button>", "type": "spot" },
+      { "time": "走路 10 min", "text": "步行前往西班牙阶梯", "type": "transport" },
+      { "time": "09:30", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Spanish%20Steps%2C%20Piazza%20di%20Spagna%2C%2000187%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Spanish Steps (西班牙阶梯)</a></span> <button class='tip-btn' data-tip-key='spanish-steps'>TIPS</button>", "type": "spot" },
+      { "time": "公交 15 分钟", "text": "公交前往圣母大殿", "type": "transport" },
+      { "time": "11:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Basilica%20Papale%20di%20Santa%20Maria%20Maggiore%2C%20Piazza%20di%20Santa%20Maria%20Maggiore%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Papal Basilica of Saint Mary Major (圣母大殿)</a> <br><small>从 Bar dell'Artista 来自拍照</small></span> <button class='tip-btn' data-tip-key='santa-maria-maggiore'>TIPS</button>", "type": "spot" },
+      { "time": "公交 70", "text": "Ara Coeli - S. Maria Maggiore", "type": "transport" },
+      { "time": "13:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Widok%20na%20Forum%20Romanum%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Widok na Forum Romanum (免费罗马广场全景视角)</a><br><small>Portico of the Harmonious Gods / L 型石柱</small></span> <button class='tip-btn' data-tip-key='harmonious-gods'>TIPS</button>", "type": "spot" },
+      { "time": "走路 7 min", "text": "步行前往真理之口", "type": "transport" },
+      { "time": "14:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Bocca%20della%20Verit%C3%A0%2C%20Piazza%20della%20Bocca%20della%20Verit%C3%A0%2C%2018%2C%2000186%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Mouth of Truth (真理之口)</a> <br><small>当天关门，在外面看</small></span> <button class='tip-btn' data-tip-key='mouth-of-truth'>TIPS</button>", "type": "spot" },
+      { "time": "走路 20 min", "text": "步行前往马耳他骑士团钥匙孔", "type": "transport" },
+      { "time": "15:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Keyhole%20of%20the%20Order%20of%20Malta%2C%20Piazza%20dei%20Cavalieri%20di%20Malta%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Keyhole of the Order of Malta (一孔三国)</a><br><small><a href=\"https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20D'Illiria%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Giardino degli Aranci 橘子花园</a>（可能未开）</small></span> <button class='tip-btn' data-tip-key='malta-tip'>TIPS</button>", "type": "spot" },
+      { "time": "公交 75 / 115", "text": "Marmorata - Morosini E. / Morosini E. - P.le Garibaldi G.", "type": "transport" },
+      { "time": "16:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Passeggiata%20del%20Gianicolo%2C%20Piazza%20Garibaldi%2C%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Passeggiata del Gianicolo (贾尼科洛山林荫大道)</a> <br><small>360° 无死角俯瞰罗马全景，日落 16:38</small></span> <button class='tip-btn' data-tip-key='gianicolo'>TIPS</button>", "type": "spot" },
+      { "time": "走路 5 min", "text": "步行前往保罗喷泉", "type": "transport" },
+      { "time": "17:00", "text": "<span class='schedule-label'><a href=\"https://www.google.com/maps/search/?api=1&query=Fontana%20dell'Acqua%20Paola%2C%20Via%20Garibaldi%2C%20Rome%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Fontana dell'Acqua Paola (保罗喷泉)</a></span> <button class='tip-btn' data-tip-key='acqua-paola'>TIPS</button>", "type": "spot" },
+      { "time": "晚餐", "text": "Trastevere 台伯岛附近 / 老城区吃晚餐" },
+      { "time": "晚上", "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>", "type": "transport" }
+    ], "notes": [] },
+    { "day": 3, "date": "2026-12-26", "title": "罗马古迹探秘", "locations": [], "schedule": [
+      { "time": "09:00", "text": "<span class='schedule-label'>Pantheon (万神殿)<br><small style=\"color: #b84635; font-weight: 800;\">11月1号 预约/买票&nbsp;&nbsp;€7</small></span> <button class='tip-btn' data-tip-key='pantheon'>TIPS</button>", "type": "spot" },
+      { "time": "10:30", "text": "<span class='schedule-label'>Chiesa di Sant'Ignazio di Loyola (圣依纳爵堂)</span> <button class='tip-btn' data-tip-key='sant-ignazio'>TIPS</button>", "type": "spot" },
+      { "time": "13:30", "text": "<span class='schedule-label'>Colosseum (罗马斗兽场)<br><small style=\"color: #b84635; font-weight: 800;\">11月26号 预约/买票&nbsp;&nbsp;€18</small></span> <button class='tip-btn' data-tip-key='colosseum'>TIPS</button>", "type": "spot" },
+      { "time": "15:30", "text": "<span class='schedule-label'>Roman Forum (罗马广场)</span> <button class='tip-btn' data-tip-key='roman-forum'>TIPS</button>", "type": "spot" },
+      { "time": "16:15", "text": "<span class='schedule-label'>Palatine Hill (帕拉蒂尼山)</span> <button class='tip-btn' data-tip-key='palatine-hill'>TIPS</button>", "type": "spot" },
+      { "time": "17:00", "text": "<span class='schedule-label'>Monument to Victor Emmanuel II (维托里亚诺 / 祖国祭坛)<br><small style=\"color: #b84635; font-weight: 800;\">上顶层 9月27号 预约/买票&nbsp;&nbsp;€18 - 待定</small><br><small>16:38 日落</small></span> <button class='tip-btn' data-tip-key='vittoriano'>TIPS</button>", "type": "spot" },
+      { "time": "晚上", "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>", "type": "transport" }
+    ], "notes": [] },
+    { "day": 4, "date": "2026-12-27", "title": "梵蒂冈与圣天使堡", "locations": [], "schedule": [
+      { "time": "08:15", "text": "出门，坐 8:23 的 A 线地铁 Termini - Ottaviano；8:41 安检入 Vatican Museums", "type": "transport" },
+      { "time": "09:00", "text": "<span class='schedule-label'>Vatican Museums (梵蒂冈博物馆)<br><small style=\"color: #2563eb; font-weight: 800;\">已预约 9:00 到现场</small></span> <button class='tip-btn' data-tip-key='vatican-museums'>TIPS</button>", "type": "spot" },
+      { "time": "上午", "text": "<span class='schedule-label'>Sistine Chapel (西斯特教堂)</span> <button class='tip-btn' data-tip-key='sistine-chapel'>TIPS</button>", "type": "spot" },
+      { "time": "中午", "text": "<span class='schedule-label'>Saint Peter’s Basilica (圣彼得大教堂)</span> <button class='tip-btn' data-tip-key='saint-peters-basilica'>TIPS</button>", "type": "spot" },
+      { "time": "走路 11分钟", "text": "步行前往圣天使堡一带", "type": "transport" },
+      { "time": "14:00", "text": "<span class='schedule-label'>Monumento di Santa Caterina da Siena (锡耶纳的圣加大利纳纪念雕像)</span> <button class='tip-btn' data-tip-key='santa-caterina-monument'>TIPS</button>", "type": "spot" },
+      { "time": "14:30", "text": "<span class='schedule-label'>Castel Sant'Angelo (圣天使堡)</span> <button class='tip-btn' data-tip-key='castel-sant-angelo'>TIPS</button>", "type": "spot" },
+      { "time": "走路 6分钟", "text": "步行前往翁贝托一世桥", "type": "transport" },
+      { "time": "16:00", "text": "<span class='schedule-label'>Ponte Umberto I (翁贝托一世桥夜景)<br><small>16:38 日落</small></span> <button class='tip-btn' data-tip-key='ponte-umberto'>TIPS</button>", "type": "spot" },
+      { "time": "晚上", "text": "公交回 <a href=\"https://www.google.com/maps/search/?api=1&query=Hotel%20Villa%20delle%20Rose%2C%20WG33%2B88%20Rome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy%2C%20Via%20Vicenza%2C%205%2C%2000185%20Roma%20RM%2C%20Italy\" target=\"_blank\" rel=\"noopener\">Hotel Villa delle Rose</a>", "type": "transport" }
+    ], "notes": [] },
+    { "day": 5, "date": "2026-12-28", "title": "转场那不勒斯", "locations": [], "schedule": [ { "time": "11:00", "text": "Temple of Aesculapius (医神庙)", "type": "spot" }, { "time": "11:24", "text": "火车 罗马 - 那不勒斯 (11:24 - 12:33)", "type": "transport" }, { "time": "下午", "text": "入住那不勒斯民宿并休整" } ], "notes": [] },
     { "day": 6, "date": "2026-12-29", "title": "那不勒斯深度游", "locations": [], "schedule": [ { "time": "全天", "text": "那不勒斯老城区与海滨自由活动" } ], "notes": [] },
     { "day": 7, "date": "2026-12-30", "title": "那不勒斯周边采风", "locations": [], "schedule": [ { "time": "全天", "text": "那不勒斯周边自由漫步与美食体验" } ], "notes": [] },
-    {
-      "day": 8,
-      "date": "2026-12-31",
-      "title": "前往索伦托跨年",
-      "locations": [],
-      "schedule": [
-        { "time": "11:00", "text": "取租车 [Naples Railway Station, Corso Meridionale, 60]", "type": "transport" },
-        { "time": "下午", "text": "自驾前往索伦托并入住，准备跨年", "type": "transport" }
-      ],
-      "notes": ["租车单号：1207333082"]
-    },
+    { "day": 8, "date": "2026-12-31", "title": "前往索伦托跨年", "locations": [], "schedule": [ { "time": "11:00", "text": "取租车 [Naples Railway Station, Corso Meridionale, 60]", "type": "transport" }, { "time": "下午", "text": "自驾前往索伦托并入住，准备跨年", "type": "transport" } ], "notes": [ "租车单号：1207333082" ] },
     { "day": 9, "date": "2027-01-01", "title": "索伦托元旦休整", "locations": [], "schedule": [ { "time": "全天", "text": "索伦托小镇慢节奏游览与阿马尔菲海岸远眺" } ], "notes": [] },
     { "day": 10, "date": "2027-01-02", "title": "索伦托周边漫游", "locations": [], "schedule": [ { "time": "全天", "text": "索伦托周边深度游玩" } ], "notes": [] },
-    {
-      "day": 11,
-      "date": "2027-01-03",
-      "title": "返程归家",
-      "locations": [],
-      "schedule": [
-        { "time": "11:00", "text": "前往那不勒斯机场还车 [Naples Airport]", "type": "transport" },
-        { "time": "13:25", "text": "飞机 那不勒斯 NAP - 阿姆斯特丹 AMS [EJU4231 13:25 - 16:05]", "type": "transport" },
-        { "time": "16:05", "text": "抵达阿姆斯特丹，转乘火车返回布雷达", "type": "transport" },
-        { "time": "晚上", "text": "安全到家，圆满结束旅程" }
-      ],
-      "notes": ["航班预订号：KDDKG28"]
-    }
+    { "day": 11, "date": "2027-01-03", "title": "返程归家", "locations": [], "schedule": [ { "time": "11:00", "text": "前往那不勒斯机场还车 [Naples Airport]", "type": "transport" }, { "time": "13:25", "text": "飞机 那不勒斯 NAP - 阿姆斯特丹 AMS [EJU4231 13:25 - 16:05]", "type": "transport" }, { "time": "16:05", "text": "抵达阿姆斯特丹，转乘火车返回布雷达", "type": "transport" }, { "time": "晚上", "text": "安全到家，圆满结束旅程" } ], "notes": [ "航班预订号：KDDKG28" ] }
   ],
   "ticketPlanning": { "items": [] },
   "places": [],
   "restaurants": [],
   "groundTransport": {
-    "rentalCar": {
-      "bookingNumber": "1207333082",
-      "company": "租车公司",
-      "pickup": { "date": "2026-12-31", "time": "11:00", "location": "Naples Railway Station (Corso Meridionale, 60)" },
-      "dropoff": { "date": "2027-01-03", "time": "11:00", "vehicleReturnPoint": "Naples Airport (Capodichino Airport)" },
-      "vehicle": { "example": "Peugeot 208 Automatic", "class": "Economy Automatic" },
-      "price": { "currency": "EUR", "payAtCounter": 0 }
-    },
+    "rentalCar": { "bookingNumber": "1207333082", "company": "租车公司", "pickup": { "date": "2026-12-31", "time": "11:00", "location": "Naples Railway Station (Corso Meridionale, 60)" }, "dropoff": { "date": "2027-01-03", "time": "11:00", "vehicleReturnPoint": "Naples Airport (Capodichino Airport)" }, "vehicle": { "example": "Peugeot 208 Automatic", "class": "Economy Automatic" }, "price": { "currency": "EUR", "payAtCounter": 0 } },
     "rentalChecklist": [],
     "drivingNotes": []
   }
