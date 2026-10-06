@@ -119,3 +119,10 @@
     openPdf(ticket);
   }, true);
 })();
+
+(() => {
+  const script = document.createElement("script");
+  script.src = "dec26-tips.js?v=20261006-1";
+  script.defer = true;
+  document.head.append(script);
+})();
