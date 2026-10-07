@@ -121,7 +121,12 @@
 })();
 
 (() => {
-  ["dec26-tips.js?v=20261006-1", "dec27-tips.js?v=20261006-1", "dec28-tips.js?v=20261007-1"].forEach((src) => {
+  [
+    "dec26-tips.js?v=20261006-1",
+    "dec27-tips.js?v=20261006-1",
+    "dec28-tips.js?v=20261007-1",
+    "dec28-schedule.js?v=20261007-1"
+  ].forEach((src) => {
     const script = document.createElement("script");
     script.src = src;
     script.defer = true;
