@@ -97,7 +97,7 @@
   const warmFromEvent = (event) => {
     const opener = event.target.closest?.(".schedule-ticket__open");
     const card = opener?.closest("[data-ticket-id]");
-    const ticket = card ? ticketDocuments.get(card.dataset.ticketId) : null;
+    const ticket = card ? ticketDocuments.get(card.datasetTicketId) : null;
     if (ticket && isPdf(ticket.document)) warmPdf(ticket.document.url);
   };
   document.addEventListener("pointerover", warmFromEvent, true);
@@ -126,6 +126,8 @@
     "dec27-tips.js?v=20261006-1",
     "dec28-tips.js?v=20261007-1",
     "dec28-schedule.js?v=20261008-1",
+    "dec29-tips.js?v=20261008-1",
+    "dec29-schedule.js?v=20261008-1",
     "dec31-schedule.js?v=20261008-1"
   ].forEach((src) => {
     const script = document.createElement("script");
