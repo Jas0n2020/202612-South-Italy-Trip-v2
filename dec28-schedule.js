@@ -12,14 +12,11 @@
     { time: "步行", text: "酒店走路去火车站", type: "transport" },
     { time: "12:40", text: "12:40 - 13:53 火车 罗马 - 那不勒斯", type: "transport" },
     { time: "14:10", text: `那不勒斯火车站 - ${naplesHome}<br><small>公交 R2 20 min，入住民宿</small>`, type: "transport" },
-    { time: "15:30", text: `<span class='schedule-label'>${link("Piazza del Plebiscito (公民投票广场)", "Piazza del Plebiscito, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='plebiscito'>TIPS</button>`, type: "spot" },
-    { time: "15:45", text: `<span class='schedule-label'>${link("Basilica di San Francesco di Paola (保罗圣方济各圣殿 / 那不勒斯版万神殿)", "Basilica di San Francesco di Paola, Piazza del Plebiscito, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='san-francesco-paola'>TIPS</button>`, type: "spot" },
-    { time: "步行 3 min", text: "前往翁贝托一世长廊", type: "transport" },
-    { time: "16:10", text: `<span class='schedule-label'>${link("Galleria Umberto I (翁贝托一世长廊)", "Galleria Umberto I, Via San Carlo, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='galleria-umberto'>TIPS</button>`, type: "spot" },
+    { time: "15:30", text: `<span class='schedule-label'>${link("Galleria Umberto I (翁贝托一世长廊)", "Galleria Umberto I, Via San Carlo, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='galleria-umberto'>TIPS</button>`, type: "spot" },
     { time: "走路 3 min", text: "前往新堡", type: "transport" },
-    { time: "16:35", text: `<span class='schedule-label'>${link("Castel Nuovo (新堡)", "Castel Nuovo, Via Vittorio Emanuele III, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='castel-nuovo'>TIPS</button>`, type: "spot" },
+    { time: "16:00", text: `<span class='schedule-label'>${link("Castel Nuovo (新堡)", "Castel Nuovo, Via Vittorio Emanuele III, Napoli, Italy")}</span> <button class='tip-btn' data-tip-key='castel-nuovo'>TIPS</button>`, type: "spot" },
     { time: "步行 + 缆车 25 min", text: "前往圣马蒂诺观景台 / 圣埃莫堡", type: "transport" },
-    { time: "17:15", text: `<span class='schedule-label'>${link("Belvedere San Martino", "Belvedere San Martino, Napoli, Italy")}<br>${link("Castel Sant'Elmo (圣埃莫堡日落)", "Castel Sant'Elmo, Via Tito Angelini, Napoli, Italy")}<br><small>16:42 日落</small></span> <button class='tip-btn' data-tip-key='san-martino-santelmo'>TIPS</button>`, type: "spot" },
+    { time: "16:35", text: `<span class='schedule-label'>${link("Belvedere San Martino", "Belvedere San Martino, Napoli, Italy")}<br>${link("Castel Sant'Elmo (圣埃莫堡日落)", "Castel Sant'Elmo, Via Tito Angelini, Napoli, Italy")}<br><small>16:42 日落</small></span> <button class='tip-btn' data-tip-key='san-martino-santelmo'>TIPS</button>`, type: "spot" },
     { time: "晚上", text: `步行 + 缆车 F3 30 min 回 ${naplesHome}`, type: "transport" }
   ];
 
