@@ -97,7 +97,7 @@
   const warmFromEvent = (event) => {
     const opener = event.target.closest?.(".schedule-ticket__open");
     const card = opener?.closest("[data-ticket-id]");
-    const ticket = card ? ticketDocuments.get(card.datasetTicketId) : null;
+    const ticket = card ? ticketDocuments.get(card.dataset.ticketId) : null;
     if (ticket && isPdf(ticket.document)) warmPdf(ticket.document.url);
   };
   document.addEventListener("pointerover", warmFromEvent, true);
