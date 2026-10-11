@@ -130,7 +130,9 @@
     "dec29-schedule.js?v=20261008-1",
     "dec30-tips.js?v=20261011-1",
     "dec30-schedule.js?v=20261011-1",
-    "dec31-schedule.js?v=20261008-1"
+    "dec31-jan03-tips.js?v=20261011-1",
+    "dec31-schedule.js?v=20261011-1",
+    "jan01-jan03-schedule.js?v=20261011-1"
   ].forEach((src) => {
     const script = document.createElement("script");
     script.src = src;
