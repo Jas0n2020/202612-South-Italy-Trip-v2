@@ -24,7 +24,7 @@
     if (!data?.days) return false;
     const day = data.days.find((item) => item.date === "2026-12-30" || item.day === 7);
     if (!day) return false;
-    day.title = "那不勒斯老城、考古馆与海湾日落";
+    day.title = "那不勒斯周边采风";
     day.schedule = schedule;
     day.notes = day.notes || [];
     if (typeof renderTimeline === "function") renderTimeline();
