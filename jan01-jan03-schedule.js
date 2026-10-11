@@ -6,7 +6,7 @@
     { time: "08:30", text: "08:30 - 09:30 早餐" },
     { time: "09:30", text: `自驾：索伦托 - ${link("Positano", "Positano, Amalfi Coast, Italy")}<br><small>沿途海岸公路观景，天气好可以短暂停靠拍照。</small>`, type: "transport" },
     { time: "10:30", text: `<span class='schedule-label'>${link("Positano (波西塔诺)", "Positano, Amalfi Coast, Italy")}<br><small>清晨打卡 + 咖啡 + 观景，不要停太久。重点：${link("Spiaggia Grande", "Spiaggia Grande, Positano, Italy")}、彩色山城远景。</small></span>`, type: "spot" },
-    { time: "12:00", text: `<span class='schedule-label'>${link("Amalfi (阿马尔菲)")}<br><small>${link("Duomo di Amalfi (阿马尔菲主教座堂)", "Duomo di Amalfi, Amalfi, Italy")}；中午可在 Amalfi 简单午餐。冬季相对更有生活气。</small></span>`, type: "spot" },
+    { time: "12:00", text: `<span class='schedule-label'>${link("Amalfi (阿马尔菲)", "Amalfi, Amalfi Coast, Italy")}<br><small>${link("Duomo di Amalfi (阿马尔菲主教座堂)", "Duomo di Amalfi, Amalfi, Italy")}；中午可在 Amalfi 简单午餐。冬季相对更有生活气。</small></span>`, type: "spot" },
     { time: "13:45", text: `<span class='schedule-label'>${link("Ravello (拉韦洛)", "Ravello, Amalfi Coast, Italy")}<br><small>${link("Villa Rufolo", "Villa Rufolo, Ravello, Italy")}；${link("Villa Cimbrone / Terrazza dell'Infinito 无限露台", "Villa Cimbrone, Ravello, Italy")}。这天最值得留时间的是 Ravello。</small></span>`, type: "spot" },
     { time: "15:45", text: "开始返程：尽量在天黑前离开 Ravello / Amalfi 一带。天气不好或开车压力大，就减少 Positano 停留，把重点放在 Amalfi + Ravello。", type: "transport" },
     { time: "16:30", text: `<span class='schedule-label'>回到索伦托海边看日落：${link("Villa Comunale", "Villa Comunale, Sorrento, Italy")} / ${link("Marina Piccola", "Marina Piccola, Sorrento, Italy")}</span><br><small>把日落安排在索伦托更稳，避免天黑后还在阿马尔菲海岸山路上赶车。</small>`, type: "spot" }
