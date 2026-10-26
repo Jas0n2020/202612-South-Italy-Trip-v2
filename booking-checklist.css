@@ -1,0 +1,5 @@
+.booking-section { border-top: 0; }
+.booking-section .booking-form { grid-template-columns: minmax(0, 1fr) 44px auto; }
+.booking-section .booking-form input[name=item] { grid-column: auto; }
+.booking-section .shopping-item label { align-items: flex-start; }
+.booking-section .shopping-item input { margin-top: 3px; }
