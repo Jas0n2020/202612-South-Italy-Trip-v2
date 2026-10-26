@@ -3,7 +3,7 @@
   "schemaVersion": "2.0-lite",
   "config": {
     "schemaVersion": "1.0.0",
-    "modules": { "flights": true, "overview": true, "itinerary": true, "todo": true, "driving": false, "ledger": true },
+    "modules": { "flights": true, "overview": false, "itinerary": true, "todo": true, "driving": false, "ledger": true },
     "language": "zh-CN",
     "persistence": { "mode": "local" }
   },
