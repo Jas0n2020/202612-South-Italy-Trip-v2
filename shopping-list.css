@@ -1,0 +1,25 @@
+.shopping-section { border-top: 1px solid var(--line); }
+.shopping-section h2, .shopping-section .section-kicker { letter-spacing: 0; }
+.shopping-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 44px auto; gap: 8px; align-items: center; }
+.shopping-form input { width: 100%; min-width: 0; min-height: 44px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; }
+.shopping-form button, .shopping-item button, .shopping-book { min-width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 6px; background: transparent; cursor: pointer; text-decoration: none; font-size: 22px; }
+.shopping-form button[type=submit] { background: var(--lake); color: white; font-size: 16px; }
+.shopping-form [hidden] { display: none; }
+.shopping-form [data-cancel] { font-size: 13px; }
+.shopping-list { margin-top: 16px; }
+.shopping-item { display: flex; align-items: center; gap: 2px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.shopping-item label { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 8px 0; cursor: pointer; }
+.shopping-item label span { overflow-wrap: anywhere; font-size: 15px; line-height: 1.5; }
+.shopping-item input { width: 19px; height: 19px; flex: 0 0 19px; accent-color: var(--lake); }
+.shopping-item.is-complete label span { text-decoration: line-through; color: var(--muted); }
+.shopping-item button { color: var(--muted); }
+.shopping-item .shopping-book { color: #c53030; }
+.shopping-item button:hover, .shopping-book:hover { background: #e5ece7; }
+.shopping-section :focus-visible { outline: 2px solid var(--lake); outline-offset: 3px; }
+.shopping-status { color: #b84635; font-size: 13px; line-height: 1.5; }
+.shopping-status:empty { display: none; }
+@media (max-width: 540px) {
+  .shopping-form { grid-template-columns: minmax(0, 1fr) 44px auto; }
+  .shopping-form input[name=item] { grid-column: 1 / -1; }
+  .shopping-item { gap: 0; }
+}
